@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://github.com/rmhirota/rmhirota.github.io/talks.html</loc>
+    <lastmod>2023-09-17T20:55:26.930Z</lastmod>
+  </url>
+  <url>
     <loc>https://github.com/rmhirota/rmhirota.github.io/about.html</loc>
-    <lastmod>2023-09-17T20:00:27.025Z</lastmod>
+    <lastmod>2023-09-17T20:55:26.566Z</lastmod>
   </url>
 </urlset>

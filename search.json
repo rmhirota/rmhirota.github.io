@@ -1,8 +1,15 @@
 [
   {
+    "objectID": "talks.html",
+    "href": "talks.html",
+    "title": "Talks",
+    "section": "",
+    "text": "Talks"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "Website",
+    "title": "About",
     "section": "",
     "text": "About this site"
   }
