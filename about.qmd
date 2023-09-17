@@ -1,5 +1,10 @@
 ---
-title: "Website"
+title: "About"
 ---
 
 About this site
+
+
+```{r}
+install.packages("rsconnect")
+```
