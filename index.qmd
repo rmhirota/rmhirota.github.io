@@ -2,6 +2,3 @@
 title: "Renata Hirota"
 ---
 
-```{r}
-install.packages("dplyr")
-```
