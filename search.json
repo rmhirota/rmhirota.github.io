@@ -1,16 +1,30 @@
 [
   {
-    "objectID": "talks.html",
-    "href": "talks.html",
-    "title": "Talks",
-    "section": "",
-    "text": "Talks"
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "About this website",
     "section": "",
-    "text": "Hi!"
+    "text": "This personal website was developed using Quarto.\nThe Github repository for this website can be found here."
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Renata Hirota",
+    "section": "",
+    "text": "My name is Renata Hirota and I’m a statistician and data journalist based in Sao Paulo, Brazil.\n🔭 I’m currently a researcher at ABJ, where I work with jurimetrics, or the application of quantitative methods to law. I’m also an MSc student in statistics at the University of Sao Paulo.\n🌱 I also occasionally work with data journalism, analysing data for stories or developing applications for journalistic purposes.\n👩🏻‍💻 I love everything R and I’m part of R-Ladies Sao Paulo.\n⚾️ My hobbies include playing baseball and D&D."
+  },
+  {
+    "objectID": "index.html#hi-there",
+    "href": "index.html#hi-there",
+    "title": "Renata Hirota",
+    "section": "",
+    "text": "My name is Renata Hirota and I’m a statistician and data journalist based in Sao Paulo, Brazil.\n🔭 I’m currently a researcher at ABJ, where I work with jurimetrics, or the application of quantitative methods to law. I’m also an MSc student in statistics at the University of Sao Paulo.\n🌱 I also occasionally work with data journalism, analysing data for stories or developing applications for journalistic purposes.\n👩🏻‍💻 I love everything R and I’m part of R-Ladies Sao Paulo.\n⚾️ My hobbies include playing baseball and D&D."
   }
 ]

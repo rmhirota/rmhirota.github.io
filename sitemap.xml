@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/rmhirota/rmhirota.github.io/talks.html</loc>
-    <lastmod>2023-09-17T21:32:03.899Z</lastmod>
+    <loc>https://github.com/rmhirota/rmhirota.github.io/about.html</loc>
+    <lastmod>2023-09-30T05:16:51.904Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/rmhirota/rmhirota.github.io/about.html</loc>
-    <lastmod>2023-09-17T21:32:03.627Z</lastmod>
+    <loc>https://github.com/rmhirota/rmhirota.github.io/talks.html</loc>
+    <lastmod>2023-09-30T05:16:51.216Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/rmhirota/rmhirota.github.io/awards.html</loc>
+    <lastmod>2023-09-30T05:16:50.144Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/rmhirota/rmhirota.github.io/blog.html</loc>
+    <lastmod>2023-09-30T05:16:50.908Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/rmhirota/rmhirota.github.io/index.html</loc>
+    <lastmod>2023-09-30T05:16:51.568Z</lastmod>
   </url>
 </urlset>
