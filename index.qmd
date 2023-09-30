@@ -1,4 +1,37 @@
 ---
 title: "Renata Hirota"
+about:
+  template: trestles
+  image: profile.jpg
+  image-shape: rounded
+  image-width: 15em
+  links:
+    - icon: mastodon
+      text: Mastodon
+      href: https://fosstodon.org/@rmhirota
+    - icon: cloud
+      text: Bluesky
+      href: https://bsky.app/profile/rmhirota.bsky.social
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/renata_mh
+    - icon: github
+      text: Github
+      href: https://github.com/rmhirota
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/renatahirota/
 ---
+
+## Hi there 👋
+
+My name is Renata Hirota and I'm a statistician and data journalist based in Sao Paulo, Brazil.
+
+🔭 I’m currently a researcher at [ABJ](https://abj.org.br), where I work with jurimetrics, or the application of quantitative methods to law. I'm also an MSc student in statistics at the University of Sao Paulo.
+
+🌱 I also occasionally work with data journalism, analysing data for stories or developing applications for journalistic purposes.
+
+👩🏻‍💻 I love everything R and I'm part of R-Ladies Sao Paulo.
+
+⚾️ My hobbies include playing baseball and D&D.
 

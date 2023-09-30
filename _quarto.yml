@@ -5,21 +5,22 @@ website:
   navbar:
     background: primary
     search: true
+    image: _site/profile.jpg
     left:
       - text: "Home"
         file: index.qmd
       - text: "Talks"
         file: talks.qmd
-      - text: "About"
-        file: about.qmd 
+      - text: "Awards"
+        file: awards.qmd
     right:
-      - icon: twitter
-        href: https://twitter.com/renata_mh
-      - icon: github
-        href: https://github.com/rmhirota
+      - text: "Blog"
+        file: blog.qmd
+      - text: About
+        file: about.qmd
 
 format:
   html:
-    theme: cosmo
+    theme: journal  # simplex yeti
     css: styles.css
     toc: true
