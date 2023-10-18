@@ -1,3 +1,13 @@
 ---
 title: "Talks"
 ---
+
+## 2023
+
+- [XI Semana da Estatística - São Carlos - 2023](https://hirota.dev/sest2023/#/title-slide)
+
+## 2022
+
+- [Estatística para jornalistas](https://hirota.dev/abraji2020/) -- Congresso Abraji 2022
+
+- [Automatização de emails usando R](https://hirota.dev/coda2022/) -- Coda 2022
