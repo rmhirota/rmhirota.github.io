@@ -23,4 +23,4 @@ format:
   html:
     theme: journal  # simplex yeti
     css: styles.css
-    toc: true
+    toc: false
