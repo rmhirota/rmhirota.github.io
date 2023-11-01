@@ -1,24 +1,10 @@
 [
   {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Blog",
-    "section": "",
-    "text": "No matching items"
-  },
-  {
     "objectID": "awards.html",
     "href": "awards.html",
     "title": "Awards",
     "section": "",
     "text": "2022\n\nIV Cláudio Weber Abramo Award for Data Journalism\nWinning project: BotPonto (Núcleo Jornalismo)\n\n\n\n2021\n\nIII Cláudio Weber Abramo Award for Data Journalism\nWinning projects:\n\nEngolindo Fumaça (InfoAmazonia)\nMonitorA (Revista AzMina, InternetLab)\n\nCommendation: Monitor Nuclear (Núcleo Jornalismo)\n\n\nKing of Spain International Journalism Award\nWinning project for Environmental Journalism: Engolindo Fumaça (InfoAmazonia)"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About this website",
-    "section": "",
-    "text": "This personal website was developed using Quarto.\nThe Github repository for this website can be found here."
   },
   {
     "objectID": "talks.html",
@@ -40,5 +26,40 @@
     "title": "Renata Hirota",
     "section": "",
     "text": "My name is Renata Hirota and I’m a statistician and data journalist based in Sao Paulo, Brazil.\n🔭 I’m currently a researcher at ABJ, where I work with jurimetrics, or the application of quantitative methods to law. I’m also an MSc student in statistics at the University of Sao Paulo.\n🌱 I occasionally work with data journalism, analysing data for stories or developing applications for journalistic purposes.\n👩🏻‍💻 I love everything R and I’m part of R-Ladies Sao Paulo.\n⚾️ My hobbies include playing baseball and D&D."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About this website",
+    "section": "",
+    "text": "This personal website was developed using Quarto.\nThe Github repository for this website can be found here."
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "What I learned at posit::conf(2023)\n\n\n\n\n\n\n\nevents\n\n\nR\n\n\n\n\nAnd everything I wish people had told me beforehand\n\n\n\n\n\n\nOct 21, 2023\n\n\nRenata Hirota\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/2023-10-21_posit-conf/index.html",
+    "href": "posts/2023-10-21_posit-conf/index.html",
+    "title": "What I learned at posit::conf(2023)",
+    "section": "",
+    "text": "Our team at trivia night\nI was honored to be an Opportunity Scholar on my first posit::conf ever, which means admission tickets, hotel and flight expeses were covered by Posit. Considering that just the admission ticket is a lot of money, especially if you come from a country with a weak currency, I would probably never even consider attending the conference out of my own pocket (although now that I’ve been to one, I’m dying to go again next year)."
+  },
+  {
+    "objectID": "posts/2023-10-21_posit-conf/index.html#so-what-happened-at-positconf",
+    "href": "posts/2023-10-21_posit-conf/index.html#so-what-happened-at-positconf",
+    "title": "What I learned at posit::conf(2023)",
+    "section": "So, what happened at posit::conf?",
+    "text": "So, what happened at posit::conf?\nI was (quite literally) speechless for most of the event (more on that later). It was so inspiring to see other Opportunity Scholars giving talks, sharing meals with fellow R nerds, and talking about everything that R allows us to do, from awesome presentations to great dataviz and reproducible modeling. It was also so nice to find common interests with various people outside of strictly professional topics.\nI don’t think I’ll be able to summarize all 4 days, but here goes nothing. The following is a short list of my personal highlights of the conference. If you want to have an overall view of Posit’s announcements, head over to Posit’s blog post where they listed their five takeaways from posit::conf(2023),\n\n1. Quarto, quarto and more quarto\nSo many things are happening with Quarto! I’m especially excited to try out typst, which promises to be friendlier than LaTeX. I also finally started this blog and website, which had been in my plans for years.\n\n\n2. DevOps for data scientists\nDevOps was my choice for the first two days of workshops. It’s a shame that, because it was a two-day workshop, that meant I couldn’t do two different workshops, but I regret nothing. I learned so much (who’s intimidated by Docker now?? Not me, that’s for sure. Well, maybe just a little bit, but hey, baby steps), and once I got home, the project I was working on during the workshop evolved into this website. I bought the domain a few months back, and this was the push I needed to actually do something with it.\n\n\n3. R-Ladies are awesome\n\n\n\nR-Ladies gathered at the Hyatt for Q&A\n\n\nI’m part of the local chapter of R-Ladies in Sao Paulo but had little to no interaction with the global team. The R-Ladies meetup on the last day was a great opportunity to better understand the workings of the organization and be inspired by awesome people who do such important work within the R community. More details of the meetup are available at this blog post.\n\n\n4. The Discord server\nBeing in a place with hundreds of people can be a little overwhelming. I found that the posit::conf Discord server was a great way to start a conversation (kudos for the foodie channel!) in a more controlled environment – while also keeping track of sticker drops!"
+  },
+  {
+    "objectID": "posts/2023-10-21_posit-conf/index.html#tips-and-hot-takes",
+    "href": "posts/2023-10-21_posit-conf/index.html#tips-and-hot-takes",
+    "title": "What I learned at posit::conf(2023)",
+    "section": "Tips and hot takes",
+    "text": "Tips and hot takes\nThere are also a few things that I wanted to share with other people planning to attend next year.\n\n1. If you’re an introvert, know that there are others like you\nYes, you, the person standing awkwardly in a corner while everyone else is mingling and seems to be having a great time. There are other people doing exactly the same. Try to approach them with some questions, maybe? Here are some basic conversation starters once you’re past the “what do you do for work” stage that are not too boring but also not too unrealistic:\n\nWhat talks did you like the most so far?\nWhat did you learn that you are excited to try?\nWhat’s your favorite R package?\nWhat is the R community like where you’re based?\nIs it your first time in {city}? Do you have any plans apart from the conf?\n\n\n\n2. Don’t assume people know the same things you do\nTalking to people who are very knowledgeable can be either intimidating or mind-opening. I had a great time talking to a much more experienced developer who explained so much about their project in a friendly way that I felt welcomed to share my thoughts and ask questions. Be mindful not to be the arrogant person (even if unconsciously) who assumes people know what you’re talking about.\n\n\n3. It’s OK to take a break\nBy the end of the second day, I was physically and mentally exhausted. To be honest, I was recovering from a cold a few days before my flight, and was feeling great, but two days of talking non-stop, some alcohol and early mornings made me so hoarse I could barely hear myself speak.\nSo I decided to skip some talks (that I knew would be recorded anyway, so I could catch up later) and rested. During one of my breaks, I had a lovely time making friendship bracelets at the arts and crafts table with other people who were recharging their social batteries. I’m also not much of a morning person, so I purposefully missed breakfast on the last day to have tea and some quiet time by myself outside the hotel.\n\n\n\nSaying farewell to posit::conf(2023)\n\n\nIt was absolutely amazing to attend posit::conf(2023). Next year it’s going to be in Seattle and I’m already thinking about how I’m going to be there. Fingers crossed for getting a talk acceppted! 🤞"
   }
 ]

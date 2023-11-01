@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/rmhirota/rmhirota.github.io/blog.html</loc>
-    <lastmod>2023-10-22T01:25:44.310Z</lastmod>
-  </url>
-  <url>
     <loc>https://github.com/rmhirota/rmhirota.github.io/awards.html</loc>
-    <lastmod>2023-10-22T01:25:43.462Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/rmhirota/rmhirota.github.io/about.html</loc>
-    <lastmod>2023-10-22T01:25:42.178Z</lastmod>
+    <lastmod>2023-11-01T04:10:00.469Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/rmhirota/rmhirota.github.io/talks.html</loc>
-    <lastmod>2023-10-22T01:25:43.058Z</lastmod>
+    <lastmod>2023-11-01T04:09:59.441Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/rmhirota/rmhirota.github.io/index.html</loc>
-    <lastmod>2023-10-22T01:25:43.898Z</lastmod>
+    <lastmod>2023-11-01T04:09:58.457Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/rmhirota/rmhirota.github.io/about.html</loc>
+    <lastmod>2023-11-01T04:09:57.533Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/rmhirota/rmhirota.github.io/blog.html</loc>
+    <lastmod>2023-11-01T04:09:59.025Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/rmhirota/rmhirota.github.io/posts/2023-10-21_posit-conf/index.html</loc>
+    <lastmod>2023-11-01T04:10:00.073Z</lastmod>
   </url>
 </urlset>

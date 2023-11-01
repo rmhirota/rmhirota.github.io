@@ -1,6 +1,8 @@
 [
   {
     "listing": "/blog.html",
-    "items": []
+    "items": [
+      "/posts/2023-10-21_posit-conf/index.html"
+    ]
   }
 ]
