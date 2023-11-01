@@ -10,7 +10,7 @@ draft: false
 ---
 
 ![Our team at trivia night](trivia.webp){fig-alt="A group
-of six people smiling with a backdrop illustrated with hex stickers.", .preview-image}
+of six people smiling with a backdrop illustrated with hex stickers" .preview-image}
 
 I was honored to be an **Opportunity Scholar** on my first posit::conf ever,
 which means admission tickets, hotel and flight expeses were covered by Posit.
