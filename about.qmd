@@ -1,0 +1,7 @@
+---
+title: "About this website"
+---
+
+This personal website was developed using [Quarto](https://quarto.org/).
+
+The Github repository for this website can be found [here](https://github.com/rmhirota/rmhirota.github.io).
