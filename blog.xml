@@ -33,16 +33,54 @@
 </blockquote>
 <p>I’ve tried to solve some of them, but this time of the year is usually so hectic that I don’t think I ever got past day 6. Maybe this is the year I get to the second week? (Nevermind that I’m already late.)</p>
 <p>I still have a full week ahead of exams and papers, so I’ll probably take it slow, but I wanted to lay the groundwork. I’m starting by installing <a href="https://github.com/clente/aor">{aor}</a>, which is a neat R package with some useful functions to help you with Advent of Code, so you can focus on actually solving the puzzles.</p>
-<pre><code># install.packages("devtools")
-devtools::install_github("clente/aor")</code></pre>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># install.packages("devtools")</span></span>
+<span id="cb1-2">devtools<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">install_github</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"clente/aor"</span>)</span></code></pre></div>
 <p>Once installed and with the right cookie configurations (all explained in <code>aor</code>’s readme), I can simply run</p>
-<pre><code>&gt; aor::day_start("2023-12-01", "aoc2023/")
-✔ Fetched puzzle.
-✔ Fetched input.
-✔ Created directory aoc2023/01_trebuchet
-✔ Wrote part 1 to aoc2023/01_trebuchet/puzzle.R                                                                                        
-✔ Wrote input to aoc2023/01_trebuchet/input.txt                                                                                        
-ℹ To fetch part 2, run `aor::day_continue("2023-12-01", "aoc2023/01_trebuchet/puzzle.R")`</code></pre>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> aor<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">day_start</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"2023-12-01"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"aoc2023/"</span>)</span>
+<span id="cb2-2">✔ Fetched puzzle.</span>
+<span id="cb2-3">✔ Fetched input.</span>
+<span id="cb2-4">✔ Created directory aoc2023<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>01_trebuchet</span>
+<span id="cb2-5">✔ Wrote part <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> to aoc2023<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>01_trebuchet<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>puzzle.R                                                                                        </span>
+<span id="cb2-6">✔ Wrote input to aoc2023<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>01_trebuchet<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>input.txt                                                                                        </span>
+<span id="cb2-7">ℹ To fetch part <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, run <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">`</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">aor::day_continue("2023-12-01", "aoc2023/01_trebuchet/puzzle.R")</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">`</span></span></code></pre></div>
 <p>…and I’ll have a directory for that day’s puzzle, with a template for the code and the input text! It’s important to note that you must be logged in to get the puzzle input, as they are different across users.</p>
 <p>Next step is solving the puzzles. I’m starting with day one.</p>
 <section id="day-1-trebuchet" class="level2">
@@ -74,17 +112,83 @@ Answer for part 1, Day 1 – click to see my solution
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<pre><code>input &lt;- "aoc2023/01_trebuchet/input.txt"
-input |&gt;
-  readr::read_csv(col_names = "input", show_col_types = FALSE) |&gt;
-  dplyr::filter(input != "") |&gt;
-  dplyr::mutate(
-    first = stringr::str_extract(input, "[0-9]"),
-    last = stringr::str_extract(input, "[0-9](?!.*[0-9])"),
-    calibration = as.numeric(paste0(first, last))
-  ) |&gt;
-  dplyr::pull(calibration) |&gt;
-  sum()</code></pre>
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">input <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"aoc2023/01_trebuchet/input.txt"</span></span>
+<span id="cb3-2">input <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-3">  readr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">read_csv</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">col_names =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"input"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">show_col_types =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-4">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(input <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">""</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-5">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb3-6">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">first =</span> stringr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_extract</span>(input, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"[0-9]"</span>),</span>
+<span id="cb3-7">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">last =</span> stringr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_extract</span>(input, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"[0-9](?!.*[0-9])"</span>),</span>
+<span id="cb3-8">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">calibration =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">paste0</span>(first, last))</span>
+<span id="cb3-9">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-10">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">pull</span>(calibration) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-11">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sum</span>()</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -113,40 +217,210 @@ First try for part 2, Day 1 – click to see my failed attempt
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>My first idea was using regex to get all ocurrences of numbers <em>and</em> spelled out numbers. So my regex would look something like</p>
-<pre><code>rx &lt;- ("[0-9]|one|two|three|four|five|six|seven|eight|nine")</code></pre>
+<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">rx <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> (<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"[0-9]|one|two|three|four|five|six|seven|eight|nine"</span>)</span></code></pre></div>
 <p>Then, I could switch the spelled out numbers, paste the first and last ones and sum them up.</p>
-<pre><code>switch_numbers &lt;- function(num) {
-  if (stringr::str_detect(num, "[a-z]")) {
-    result &lt;- switch(
-      num, one = 1, two = 2, three = 3, four = 4, five = 5, six = 6, seven = 7,
-      eight = 8, nine = 9
-    )
-  } else {
-    result &lt;- num
-  }
-  as.numeric(result)
-}
-
-input |&gt;
-  readr::read_csv(col_names = "input", show_col_types = FALSE) |&gt;
-  dplyr::filter(input != "") |&gt;
-  dplyr::mutate(
-    numbers = stringr::str_extract_all(input, rx),
-    first = purrr::map_vec(numbers, head, n = 1),
-    last = purrr::map_vec(numbers, tail, n = 1),
-    first = purrr::map_vec(first, switch_numbers),
-    last = purrr::map_vec(last, switch_numbers),
-    calibration = as.numeric(paste0(first, last))
-  )|&gt;
-  dplyr::pull(calibration) |&gt;
-  sum()</code></pre>
+<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">switch_numbers <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">function</span>(num) {</span>
+<span id="cb5-2">  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">if</span> (stringr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_detect</span>(num, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"[a-z]"</span>)) {</span>
+<span id="cb5-3">    result <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">switch</span>(</span>
+<span id="cb5-4">      num, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">one =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">two =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">three =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">four =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">five =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">six =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">seven =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span>,</span>
+<span id="cb5-5">      <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">eight =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">nine =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">9</span></span>
+<span id="cb5-6">    )</span>
+<span id="cb5-7">  } <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">else</span> {</span>
+<span id="cb5-8">    result <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> num</span>
+<span id="cb5-9">  }</span>
+<span id="cb5-10">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(result)</span>
+<span id="cb5-11">}</span>
+<span id="cb5-12"></span>
+<span id="cb5-13">input <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb5-14">  readr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">read_csv</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">col_names =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"input"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">show_col_types =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb5-15">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(input <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">""</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb5-16">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb5-17">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">numbers =</span> stringr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_extract_all</span>(input, rx),</span>
+<span id="cb5-18">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">first =</span> purrr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">map_vec</span>(numbers, head, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">n =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>),</span>
+<span id="cb5-19">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">last =</span> purrr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">map_vec</span>(numbers, tail, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">n =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>),</span>
+<span id="cb5-20">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">first =</span> purrr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">map_vec</span>(first, switch_numbers),</span>
+<span id="cb5-21">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">last =</span> purrr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">map_vec</span>(last, switch_numbers),</span>
+<span id="cb5-22">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">calibration =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">paste0</span>(first, last))</span>
+<span id="cb5-23">  )<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb5-24">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">pull</span>(calibration) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb5-25">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sum</span>()</span></code></pre></div>
 <p><em>But</em>, turns out I was wrong. You can see the problem with <code>str_extract_all</code> in this case:</p>
-<pre><code>&gt; stringr::str_extract_all("threeight", rx)
-[[1]]
-[1] "three"</code></pre>
+<div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> stringr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_extract_all</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"threeight"</span>, rx)</span>
+<span id="cb6-2">[[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]]</span>
+<span id="cb6-3">[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>] <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"three"</span></span></code></pre></div>
 <p>What I actually wanted:</p>
-<pre><code>[[1]]
-[1] "three"  [2] "eight"</code></pre>
+<div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">[[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]]</span>
+<span id="cb7-2">[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>] <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"three"</span>  [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>] <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"eight"</span></span></code></pre></div>
 <p>The regex I was using does not take into account overlapping!</p>
 </div>
 </div>
@@ -164,34 +438,214 @@ Second try for part 2, Day 1 – click to see my solution
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<pre><code>switch_numbers &lt;- function(num) {
-  if (stringr::str_detect(num, "[a-z]")) {
-    result &lt;- switch(
-      num, one = 1, two = 2, three = 3, four = 4, five = 5, six = 6, seven = 7,
-      eight = 8, nine = 9
-    )
-  } else {
-    result &lt;- num
-  }
-  as.numeric(result)
-}
-
-rx &lt;- paste0("(?=([0-9]|", paste(xfun::n2w(1:9), collapse = "|"), "))")
-
-input |&gt;
-  readr::read_csv(col_names = "input", show_col_types = FALSE) |&gt;
-  dplyr::filter(input != "") |&gt;
-  dplyr::mutate(
-    numbers = stringi::stri_match_all_regex(input, rx),
-    numbers = purrr::map(numbers, ~magrittr::extract(.x, ,2)),
-    first = purrr::map_vec(numbers, head, n = 1),
-    last = purrr::map_vec(numbers, tail, n = 1),
-    first = purrr::map_vec(first, switch_numbers),
-    last = purrr::map_vec(last, switch_numbers),
-    calibration = as.numeric(paste0(first, last))
-  ) |&gt;
-  dplyr::pull(calibration) |&gt;
-  sum()</code></pre>
+<div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1">switch_numbers <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">function</span>(num) {</span>
+<span id="cb8-2">  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">if</span> (stringr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_detect</span>(num, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"[a-z]"</span>)) {</span>
+<span id="cb8-3">    result <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">switch</span>(</span>
+<span id="cb8-4">      num, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">one =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">two =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">three =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">four =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">five =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">six =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">seven =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span>,</span>
+<span id="cb8-5">      <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">eight =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">nine =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">9</span></span>
+<span id="cb8-6">    )</span>
+<span id="cb8-7">  } <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">else</span> {</span>
+<span id="cb8-8">    result <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> num</span>
+<span id="cb8-9">  }</span>
+<span id="cb8-10">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(result)</span>
+<span id="cb8-11">}</span>
+<span id="cb8-12"></span>
+<span id="cb8-13">rx <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">paste0</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"(?=([0-9]|"</span>, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">paste</span>(xfun<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">n2w</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">9</span>), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">collapse =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"|"</span>), <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"))"</span>)</span>
+<span id="cb8-14"></span>
+<span id="cb8-15">input <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb8-16">  readr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">read_csv</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">col_names =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"input"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">show_col_types =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb8-17">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(input <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">""</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb8-18">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb8-19">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">numbers =</span> stringi<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">stri_match_all_regex</span>(input, rx),</span>
+<span id="cb8-20">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">numbers =</span> purrr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">map</span>(numbers, <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span>magrittr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">extract</span>(.x, ,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)),</span>
+<span id="cb8-21">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">first =</span> purrr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">map_vec</span>(numbers, head, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">n =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>),</span>
+<span id="cb8-22">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">last =</span> purrr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">map_vec</span>(numbers, tail, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">n =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>),</span>
+<span id="cb8-23">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">first =</span> purrr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">map_vec</span>(first, switch_numbers),</span>
+<span id="cb8-24">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">last =</span> purrr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">map_vec</span>(last, switch_numbers),</span>
+<span id="cb8-25">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">calibration =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">paste0</span>(first, last))</span>
+<span id="cb8-26">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb8-27">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">pull</span>(calibration) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb8-28">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sum</span>()</span></code></pre></div>
 <p>Using a lookahead in the regex (?=) and <code>stringi::stri_match_all_regex</code> did the trick and got me to the right answer! 🥳</p>
 </div>
 </div>

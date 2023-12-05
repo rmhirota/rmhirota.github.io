@@ -23,6 +23,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -178,16 +212,16 @@ ul.task-list li input[type="checkbox"] {
 </blockquote>
 <p>I’ve tried to solve some of them, but this time of the year is usually so hectic that I don’t think I ever got past day 6. Maybe this is the year I get to the second week? (Nevermind that I’m already late.)</p>
 <p>I still have a full week ahead of exams and papers, so I’ll probably take it slow, but I wanted to lay the groundwork. I’m starting by installing <a href="https://github.com/clente/aor">{aor}</a>, which is a neat R package with some useful functions to help you with Advent of Code, so you can focus on actually solving the puzzles.</p>
-<pre><code># install.packages("devtools")
-devtools::install_github("clente/aor")</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("devtools")</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"clente/aor"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Once installed and with the right cookie configurations (all explained in <code>aor</code>’s readme), I can simply run</p>
-<pre><code>&gt; aor::day_start("2023-12-01", "aoc2023/")
-✔ Fetched puzzle.
-✔ Fetched input.
-✔ Created directory aoc2023/01_trebuchet
-✔ Wrote part 1 to aoc2023/01_trebuchet/puzzle.R                                                                                        
-✔ Wrote input to aoc2023/01_trebuchet/input.txt                                                                                        
-ℹ To fetch part 2, run `aor::day_continue("2023-12-01", "aoc2023/01_trebuchet/puzzle.R")`</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> aor<span class="sc">::</span><span class="fu">day_start</span>(<span class="st">"2023-12-01"</span>, <span class="st">"aoc2023/"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>✔ Fetched puzzle.</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>✔ Fetched input.</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>✔ Created directory aoc2023<span class="sc">/</span>01_trebuchet</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>✔ Wrote part <span class="dv">1</span> to aoc2023<span class="sc">/</span>01_trebuchet<span class="sc">/</span>puzzle.R                                                                                        </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>✔ Wrote input to aoc2023<span class="sc">/</span>01_trebuchet<span class="sc">/</span>input.txt                                                                                        </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>ℹ To fetch part <span class="dv">2</span>, run <span class="st">`</span><span class="at">aor::day_continue("2023-12-01", "aoc2023/01_trebuchet/puzzle.R")</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>…and I’ll have a directory for that day’s puzzle, with a template for the code and the input text! It’s important to note that you must be logged in to get the puzzle input, as they are different across users.</p>
 <p>Next step is solving the puzzles. I’m starting with day one.</p>
 <section id="day-1-trebuchet" class="level2">
@@ -219,17 +253,17 @@ Answer for part 1, Day 1 – click to see my solution
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<pre><code>input &lt;- "aoc2023/01_trebuchet/input.txt"
-input |&gt;
-  readr::read_csv(col_names = "input", show_col_types = FALSE) |&gt;
-  dplyr::filter(input != "") |&gt;
-  dplyr::mutate(
-    first = stringr::str_extract(input, "[0-9]"),
-    last = stringr::str_extract(input, "[0-9](?!.*[0-9])"),
-    calibration = as.numeric(paste0(first, last))
-  ) |&gt;
-  dplyr::pull(calibration) |&gt;
-  sum()</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>input <span class="ot">&lt;-</span> <span class="st">"aoc2023/01_trebuchet/input.txt"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>input <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="at">col_names =</span> <span class="st">"input"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(input <span class="sc">!=</span> <span class="st">""</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">first =</span> stringr<span class="sc">::</span><span class="fu">str_extract</span>(input, <span class="st">"[0-9]"</span>),</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">last =</span> stringr<span class="sc">::</span><span class="fu">str_extract</span>(input, <span class="st">"[0-9](?!.*[0-9])"</span>),</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">calibration =</span> <span class="fu">as.numeric</span>(<span class="fu">paste0</span>(first, last))</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(calibration) <span class="sc">|&gt;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -258,40 +292,40 @@ First try for part 2, Day 1 – click to see my failed attempt
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>My first idea was using regex to get all ocurrences of numbers <em>and</em> spelled out numbers. So my regex would look something like</p>
-<pre><code>rx &lt;- ("[0-9]|one|two|three|four|five|six|seven|eight|nine")</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>rx <span class="ot">&lt;-</span> (<span class="st">"[0-9]|one|two|three|four|five|six|seven|eight|nine"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then, I could switch the spelled out numbers, paste the first and last ones and sum them up.</p>
-<pre><code>switch_numbers &lt;- function(num) {
-  if (stringr::str_detect(num, "[a-z]")) {
-    result &lt;- switch(
-      num, one = 1, two = 2, three = 3, four = 4, five = 5, six = 6, seven = 7,
-      eight = 8, nine = 9
-    )
-  } else {
-    result &lt;- num
-  }
-  as.numeric(result)
-}
-
-input |&gt;
-  readr::read_csv(col_names = "input", show_col_types = FALSE) |&gt;
-  dplyr::filter(input != "") |&gt;
-  dplyr::mutate(
-    numbers = stringr::str_extract_all(input, rx),
-    first = purrr::map_vec(numbers, head, n = 1),
-    last = purrr::map_vec(numbers, tail, n = 1),
-    first = purrr::map_vec(first, switch_numbers),
-    last = purrr::map_vec(last, switch_numbers),
-    calibration = as.numeric(paste0(first, last))
-  )|&gt;
-  dplyr::pull(calibration) |&gt;
-  sum()</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>switch_numbers <span class="ot">&lt;-</span> <span class="cf">function</span>(num) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (stringr<span class="sc">::</span><span class="fu">str_detect</span>(num, <span class="st">"[a-z]"</span>)) {</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    result <span class="ot">&lt;-</span> <span class="cf">switch</span>(</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>      num, <span class="at">one =</span> <span class="dv">1</span>, <span class="at">two =</span> <span class="dv">2</span>, <span class="at">three =</span> <span class="dv">3</span>, <span class="at">four =</span> <span class="dv">4</span>, <span class="at">five =</span> <span class="dv">5</span>, <span class="at">six =</span> <span class="dv">6</span>, <span class="at">seven =</span> <span class="dv">7</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">eight =</span> <span class="dv">8</span>, <span class="at">nine =</span> <span class="dv">9</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    result <span class="ot">&lt;-</span> num</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.numeric</span>(result)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>input <span class="sc">|&gt;</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="at">col_names =</span> <span class="st">"input"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(input <span class="sc">!=</span> <span class="st">""</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">numbers =</span> stringr<span class="sc">::</span><span class="fu">str_extract_all</span>(input, rx),</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">first =</span> purrr<span class="sc">::</span><span class="fu">map_vec</span>(numbers, head, <span class="at">n =</span> <span class="dv">1</span>),</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">last =</span> purrr<span class="sc">::</span><span class="fu">map_vec</span>(numbers, tail, <span class="at">n =</span> <span class="dv">1</span>),</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">first =</span> purrr<span class="sc">::</span><span class="fu">map_vec</span>(first, switch_numbers),</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">last =</span> purrr<span class="sc">::</span><span class="fu">map_vec</span>(last, switch_numbers),</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">calibration =</span> <span class="fu">as.numeric</span>(<span class="fu">paste0</span>(first, last))</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">|&gt;</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(calibration) <span class="sc">|&gt;</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><em>But</em>, turns out I was wrong. You can see the problem with <code>str_extract_all</code> in this case:</p>
-<pre><code>&gt; stringr::str_extract_all("threeight", rx)
-[[1]]
-[1] "three"</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> stringr<span class="sc">::</span><span class="fu">str_extract_all</span>(<span class="st">"threeight"</span>, rx)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>[[<span class="dv">1</span>]]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"three"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>What I actually wanted:</p>
-<pre><code>[[1]]
-[1] "three"  [2] "eight"</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>[[<span class="dv">1</span>]]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"three"</span>  [<span class="dv">2</span>] <span class="st">"eight"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The regex I was using does not take into account overlapping!</p>
 </div>
 </div>
@@ -309,34 +343,34 @@ Second try for part 2, Day 1 – click to see my solution
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<pre><code>switch_numbers &lt;- function(num) {
-  if (stringr::str_detect(num, "[a-z]")) {
-    result &lt;- switch(
-      num, one = 1, two = 2, three = 3, four = 4, five = 5, six = 6, seven = 7,
-      eight = 8, nine = 9
-    )
-  } else {
-    result &lt;- num
-  }
-  as.numeric(result)
-}
-
-rx &lt;- paste0("(?=([0-9]|", paste(xfun::n2w(1:9), collapse = "|"), "))")
-
-input |&gt;
-  readr::read_csv(col_names = "input", show_col_types = FALSE) |&gt;
-  dplyr::filter(input != "") |&gt;
-  dplyr::mutate(
-    numbers = stringi::stri_match_all_regex(input, rx),
-    numbers = purrr::map(numbers, ~magrittr::extract(.x, ,2)),
-    first = purrr::map_vec(numbers, head, n = 1),
-    last = purrr::map_vec(numbers, tail, n = 1),
-    first = purrr::map_vec(first, switch_numbers),
-    last = purrr::map_vec(last, switch_numbers),
-    calibration = as.numeric(paste0(first, last))
-  ) |&gt;
-  dplyr::pull(calibration) |&gt;
-  sum()</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>switch_numbers <span class="ot">&lt;-</span> <span class="cf">function</span>(num) {</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (stringr<span class="sc">::</span><span class="fu">str_detect</span>(num, <span class="st">"[a-z]"</span>)) {</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    result <span class="ot">&lt;-</span> <span class="cf">switch</span>(</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>      num, <span class="at">one =</span> <span class="dv">1</span>, <span class="at">two =</span> <span class="dv">2</span>, <span class="at">three =</span> <span class="dv">3</span>, <span class="at">four =</span> <span class="dv">4</span>, <span class="at">five =</span> <span class="dv">5</span>, <span class="at">six =</span> <span class="dv">6</span>, <span class="at">seven =</span> <span class="dv">7</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">eight =</span> <span class="dv">8</span>, <span class="at">nine =</span> <span class="dv">9</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    result <span class="ot">&lt;-</span> num</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.numeric</span>(result)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>rx <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"(?=([0-9]|"</span>, <span class="fu">paste</span>(xfun<span class="sc">::</span><span class="fu">n2w</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>), <span class="at">collapse =</span> <span class="st">"|"</span>), <span class="st">"))"</span>)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>input <span class="sc">|&gt;</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="at">col_names =</span> <span class="st">"input"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(input <span class="sc">!=</span> <span class="st">""</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">numbers =</span> stringi<span class="sc">::</span><span class="fu">stri_match_all_regex</span>(input, rx),</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">numbers =</span> purrr<span class="sc">::</span><span class="fu">map</span>(numbers, <span class="sc">~</span>magrittr<span class="sc">::</span><span class="fu">extract</span>(.x, ,<span class="dv">2</span>)),</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">first =</span> purrr<span class="sc">::</span><span class="fu">map_vec</span>(numbers, head, <span class="at">n =</span> <span class="dv">1</span>),</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">last =</span> purrr<span class="sc">::</span><span class="fu">map_vec</span>(numbers, tail, <span class="at">n =</span> <span class="dv">1</span>),</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">first =</span> purrr<span class="sc">::</span><span class="fu">map_vec</span>(first, switch_numbers),</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">last =</span> purrr<span class="sc">::</span><span class="fu">map_vec</span>(last, switch_numbers),</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">calibration =</span> <span class="fu">as.numeric</span>(<span class="fu">paste0</span>(first, last))</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(calibration) <span class="sc">|&gt;</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Using a lookahead in the regex (?=) and <code>stringi::stri_match_all_regex</code> did the trick and got me to the right answer! 🥳</p>
 </div>
 </div>
