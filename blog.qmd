@@ -1,5 +1,6 @@
 ---
 title: "Blog"
+site-url: "https://hirota.dev"
 listing:
   contents: posts
   sort: "date desc"

@@ -22,7 +22,7 @@ complete every puzzle and post about it.
 variety of skill sets and skill levels that can be solved in any programming
 language you like. People use them as interview prep, company training,
 university coursework, practice problems, a speed contest, or to challenge each
-other.
+other. -- [Advent of Code](https://adventofcode.com/2023/about)
 
 I've tried to solve some of them, but this time of the year is usually so hectic
 that I don't think I ever got past day 6. Maybe this is the year I get to the
@@ -181,6 +181,18 @@ This takes us to attempt #2, where I try to take this problem into account with 
 ### Second try for part 2, Day 1 -- click to see my solution
 
 ```
+switch_numbers <- function(num) {
+  if (stringr::str_detect(num, "[a-z]")) {
+    result <- switch(
+      num, one = 1, two = 2, three = 3, four = 4, five = 5, six = 6, seven = 7,
+      eight = 8, nine = 9
+    )
+  } else {
+    result <- num
+  }
+  as.numeric(result)
+}
+
 rx <- paste0("(?=([0-9]|", paste(xfun::n2w(1:9), collapse = "|"), "))")
 
 input |>
@@ -204,3 +216,6 @@ trick and got me to the right answer! 🥳
 
 :::
 
+If you have any other ideas, feel free to tell me more on [Mastodon](https://fosstodon.org/@rmhirota) or [Bluesky](https://bsky.app/profile/hirota.dev).
+
+Happy coding! <3

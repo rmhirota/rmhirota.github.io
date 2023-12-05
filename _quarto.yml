@@ -2,6 +2,8 @@ project:
   type: website
 
 website:
+  site-url: "https://hirota.dev"
+  title: "Renata Hirota's personal website"
   open-graph: true
   navbar:
     background: primary
@@ -17,6 +19,8 @@ website:
     right:
       - text: "Blog"
         file: blog.qmd
+      - icon: rss
+        href: blog.xml
       - text: About
         file: about.qmd
 
