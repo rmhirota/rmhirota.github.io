@@ -3,7 +3,7 @@ project:
 
 website:
   site-url: "https://hirota.dev"
-  title: "Renata Hirota's personal website"
+  title: "Renata Hirota's website"
   open-graph: true
   navbar:
     background: primary
