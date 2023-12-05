@@ -6,6 +6,7 @@ website:
   title: "Renata Hirota's website"
   open-graph: true
   navbar:
+    title: false
     background: primary
     search: true
     image: _site/profile.jpg
