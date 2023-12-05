@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Renata Hirota&#39;s personal website</title>
+<link>https://hirota.dev/blog.html</link>
+<atom:link href="https://hirota.dev/blog.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<generator>quarto-1.3.450</generator>
+<lastBuildDate>Sun, 03 Dec 2023 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Advent of Code in R</title>
+  <dc:creator>Renata Hirota</dc:creator>
+  <link>https://hirota.dev/posts/2023-12-03-aor/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://hirota.dev/posts/2023-12-03-aor/xmas.webp" class="preview-image img-fluid figure-img" alt="Red ball ornament"></p>
+<figcaption class="figure-caption">Photo by <a href="https://unsplash.com/@markusspiske?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Markus Spiske</a> on <a href="https://unsplash.com/photos/closeup-photo-of-red-ball-ornament-on-surface-AF_4tBQjdtc?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Unsplash</a></figcaption>
+</figure>
+</div>
+<p>It’s <em>that</em> time of the year again! 🎄</p>
+<p>I learned about <a href="https://adventofcode.com/2023/about">Advent of Code</a> a couple of years ago, when <a href="https://github.com/clente">Caio</a> challenged himself to complete every puzzle and post about it.</p>
+<blockquote class="blockquote">
+<p>Advent of Code is an Advent calendar of small programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language you like. People use them as interview prep, company training, university coursework, practice problems, a speed contest, or to challenge each other. – <a href="https://adventofcode.com/2023/about">Advent of Code</a></p>
+</blockquote>
+<p>I’ve tried to solve some of them, but this time of the year is usually so hectic that I don’t think I ever got past day 6. Maybe this is the year I get to the second week? (Nevermind that I’m already late.)</p>
+<p>I still have a full week ahead of exams and papers, so I’ll probably take it slow, but I wanted to lay the groundwork. I’m starting by installing <a href="https://github.com/clente/aor">{aor}</a>, which is a neat R package with some useful functions to help you with Advent of Code, so you can focus on actually solving the puzzles.</p>
+<pre><code># install.packages("devtools")
+devtools::install_github("clente/aor")</code></pre>
+<p>Once installed and with the right cookie configurations (all explained in <code>aor</code>’s readme), I can simply run</p>
+<pre><code>&gt; aor::day_start("2023-12-01", "aoc2023/")
+✔ Fetched puzzle.
+✔ Fetched input.
+✔ Created directory aoc2023/01_trebuchet
+✔ Wrote part 1 to aoc2023/01_trebuchet/puzzle.R                                                                                        
+✔ Wrote input to aoc2023/01_trebuchet/input.txt                                                                                        
+ℹ To fetch part 2, run `aor::day_continue("2023-12-01", "aoc2023/01_trebuchet/puzzle.R")`</code></pre>
+<p>…and I’ll have a directory for that day’s puzzle, with a template for the code and the input text! It’s important to note that you must be logged in to get the puzzle input, as they are different across users.</p>
+<p>Next step is solving the puzzles. I’m starting with day one.</p>
+<section id="day-1-trebuchet" class="level2">
+<h2 class="anchored" data-anchor-id="day-1-trebuchet">Day 1: Trebuchet?!</h2>
+<p>To sum things up, the first part of day 1 is:</p>
+<ul>
+<li>Read a file with text</li>
+<li>Identify the first and last numbers on each line (the “calibration”) and sum them up</li>
+</ul>
+<p>Every puzzle comes with a minimal example:</p>
+<blockquote class="blockquote">
+<p>For example:<br>
+1abc2<br>
+pqr3stu8vwx<br>
+a1b2c3d4e5f<br>
+treb7uchet<br>
+In this example, the calibration values of these four lines are <code>12</code>, <code>38</code>, <code>15</code>, and <code>77</code>. Adding these together produces <em><code>142</code></em>.</p>
+</blockquote>
+<p>There are many ways this can be done, but I ended up using <code>dplyr</code> because I’m more used to it. With a little bit of regex, it was easy enough to extract the numbers that I needed to clear part 1.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer for part 1, Day 1 – click to see my solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<pre><code>input &lt;- "aoc2023/01_trebuchet/input.txt"
+input |&gt;
+  readr::read_csv(col_names = "input", show_col_types = FALSE) |&gt;
+  dplyr::filter(input != "") |&gt;
+  dplyr::mutate(
+    first = stringr::str_extract(input, "[0-9]"),
+    last = stringr::str_extract(input, "[0-9](?!.*[0-9])"),
+    calibration = as.numeric(paste0(first, last))
+  ) |&gt;
+  dplyr::pull(calibration) |&gt;
+  sum()</code></pre>
+</div>
+</div>
+</div>
+<p>Part 2 was a little bit trickier. The puzzle says:</p>
+<blockquote class="blockquote">
+<p>Your calculation isn’t quite right. It looks like some of the digits are actually <em>spelled out with letters</em>: <code>one</code>, <code>two</code>, <code>three</code>, <code>four</code>, <code>five</code>, <code>six</code>, <code>seven</code>, <code>eight</code>, and <code>nine</code> <em>also</em> count as valid “digits”. Equipped with this new information, you now need to find the real first and last digit on each line. For example:<br>
+two1nine<br>
+eightwothree<br>
+abcone2threexyz<br>
+xtwone3four<br>
+4nineeightseven2<br>
+zoneight234<br>
+7pqrstsixteen<br>
+In this example, the calibration values are <code>29</code>, <code>83</code>, <code>13</code>, <code>24</code>, <code>42</code>, <code>14</code>, and <code>76</code>. Adding these together produces <em><code>281</code></em>.</p>
+</blockquote>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+First try for part 2, Day 1 – click to see my failed attempt
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>My first idea was using regex to get all ocurrences of numbers <em>and</em> spelled out numbers. So my regex would look something like</p>
+<pre><code>rx &lt;- ("[0-9]|one|two|three|four|five|six|seven|eight|nine")</code></pre>
+<p>Then, I could switch the spelled out numbers, paste the first and last ones and sum them up.</p>
+<pre><code>switch_numbers &lt;- function(num) {
+  if (stringr::str_detect(num, "[a-z]")) {
+    result &lt;- switch(
+      num, one = 1, two = 2, three = 3, four = 4, five = 5, six = 6, seven = 7,
+      eight = 8, nine = 9
+    )
+  } else {
+    result &lt;- num
+  }
+  as.numeric(result)
+}
+
+input |&gt;
+  readr::read_csv(col_names = "input", show_col_types = FALSE) |&gt;
+  dplyr::filter(input != "") |&gt;
+  dplyr::mutate(
+    numbers = stringr::str_extract_all(input, rx),
+    first = purrr::map_vec(numbers, head, n = 1),
+    last = purrr::map_vec(numbers, tail, n = 1),
+    first = purrr::map_vec(first, switch_numbers),
+    last = purrr::map_vec(last, switch_numbers),
+    calibration = as.numeric(paste0(first, last))
+  )|&gt;
+  dplyr::pull(calibration) |&gt;
+  sum()</code></pre>
+<p><em>But</em>, turns out I was wrong. You can see the problem with <code>str_extract_all</code> in this case:</p>
+<pre><code>&gt; stringr::str_extract_all("threeight", rx)
+[[1]]
+[1] "three"</code></pre>
+<p>What I actually wanted:</p>
+<pre><code>[[1]]
+[1] "three"  [2] "eight"</code></pre>
+<p>The regex I was using does not take into account overlapping!</p>
+</div>
+</div>
+</div>
+<p>This takes us to attempt #2, where I try to take this problem into account with <code>stringi</code>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Second try for part 2, Day 1 – click to see my solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<pre><code>switch_numbers &lt;- function(num) {
+  if (stringr::str_detect(num, "[a-z]")) {
+    result &lt;- switch(
+      num, one = 1, two = 2, three = 3, four = 4, five = 5, six = 6, seven = 7,
+      eight = 8, nine = 9
+    )
+  } else {
+    result &lt;- num
+  }
+  as.numeric(result)
+}
+
+rx &lt;- paste0("(?=([0-9]|", paste(xfun::n2w(1:9), collapse = "|"), "))")
+
+input |&gt;
+  readr::read_csv(col_names = "input", show_col_types = FALSE) |&gt;
+  dplyr::filter(input != "") |&gt;
+  dplyr::mutate(
+    numbers = stringi::stri_match_all_regex(input, rx),
+    numbers = purrr::map(numbers, ~magrittr::extract(.x, ,2)),
+    first = purrr::map_vec(numbers, head, n = 1),
+    last = purrr::map_vec(numbers, tail, n = 1),
+    first = purrr::map_vec(first, switch_numbers),
+    last = purrr::map_vec(last, switch_numbers),
+    calibration = as.numeric(paste0(first, last))
+  ) |&gt;
+  dplyr::pull(calibration) |&gt;
+  sum()</code></pre>
+<p>Using a lookahead in the regex (?=) and <code>stringi::stri_match_all_regex</code> did the trick and got me to the right answer! 🥳</p>
+</div>
+</div>
+</div>
+<p>If you have any other ideas, feel free to tell me more on <a href="https://fosstodon.org/@rmhirota">Mastodon</a> or <a href="https://bsky.app/profile/hirota.dev">Bluesky</a>.</p>
+<p>Happy coding! &lt;3</p>
+
+
+</section>
+
+ ]]></description>
+  <category>advent of code</category>
+  <category>R</category>
+  <guid>https://hirota.dev/posts/2023-12-03-aor/index.html</guid>
+  <pubDate>Sun, 03 Dec 2023 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>What I learned at posit::conf(2023)</title>
+  <dc:creator>Renata Hirota</dc:creator>
+  <link>https://hirota.dev/posts/2023-10-21_posit-conf/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://hirota.dev/posts/2023-10-21_posit-conf/trivia.webp" class="preview-image img-fluid figure-img" alt="A group of six people smiling with a backdrop illustrated with hex stickers"></p>
+<figcaption class="figure-caption">Our team at trivia night</figcaption>
+</figure>
+</div>
+<p>I was honored to be an <strong>Opportunity Scholar</strong> on my first posit::conf ever, which means admission tickets, hotel and flight expeses were covered by Posit. Considering that just the admission ticket is a <em>lot</em> of money, especially if you come from a country with a weak currency, I would probably never even consider attending the conference out of my own pocket (although now that I’ve been to one, I’m dying to go again next year).</p>
+<section id="so-what-happened-at-positconf" class="level2">
+<h2 class="anchored" data-anchor-id="so-what-happened-at-positconf">So, what happened at posit::conf?</h2>
+<p>I was (quite literally) speechless for most of the event (more on that later). It was so inspiring to see other Opportunity Scholars giving talks, sharing meals with fellow R nerds, and talking about everything that R allows us to do, from awesome presentations to great dataviz and reproducible modeling. It was also so nice to find common interests with various people outside of strictly professional topics.</p>
+<p>I don’t think I’ll be able to summarize all 4 days, but here goes nothing. The following is a short list of my personal highlights of the conference. If you want to have an overall view of Posit’s announcements, head over to Posit’s blog post where they listed their <a href="https://posit.co/blog/five-takeaways-from-posit-conf-2023/">five takeaways from posit::conf(2023)</a>,</p>
+<section id="quarto-quarto-and-more-quarto" class="level3">
+<h3 class="anchored" data-anchor-id="quarto-quarto-and-more-quarto">1. Quarto, quarto and more quarto</h3>
+<p>So many things are happening with Quarto! I’m especially excited to try out <strong>typst</strong>, which promises to be friendlier than LaTeX. I also finally started this blog and website, which had been in my plans for years.</p>
+</section>
+<section id="devops-for-data-scientists" class="level3">
+<h3 class="anchored" data-anchor-id="devops-for-data-scientists">2. DevOps for data scientists</h3>
+<p>DevOps was my choice for the first two days of workshops. It’s a shame that, because it was a two-day workshop, that meant I couldn’t do two different workshops, but I regret nothing. I learned so much (who’s intimidated by Docker now?? Not me, that’s for sure. Well, maybe just a little bit, but hey, baby steps), and once I got home, the project I was working on during the workshop evolved into this website. I bought the domain a few months back, and this was the push I needed to actually do something with it.</p>
+</section>
+<section id="r-ladies-are-awesome" class="level3">
+<h3 class="anchored" data-anchor-id="r-ladies-are-awesome">3. R-Ladies are awesome</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://hirota.dev/posts/2023-10-21_posit-conf/rladies.webp" class="img-fluid figure-img" alt="A big group of people sitting and standing after the R-Ladies meetup."></p>
+<figcaption class="figure-caption">R-Ladies gathered at the Hyatt for Q&amp;A</figcaption>
+</figure>
+</div>
+<p>I’m part of the local chapter of R-Ladies in Sao Paulo but had little to no interaction with the global team. The R-Ladies meetup on the last day was a great opportunity to better understand the workings of the organization and be inspired by awesome people who do such important work within the R community. More details of the meetup are available at <a href="https://rladies.org/news/2023-10-09-positconf-chicago-meetup/">this blog post</a>.</p>
+</section>
+<section id="the-discord-server" class="level3">
+<h3 class="anchored" data-anchor-id="the-discord-server">4. The Discord server</h3>
+<p>Being in a place with hundreds of people can be a little overwhelming. I found that the posit::conf Discord server was a great way to start a conversation (kudos for the foodie channel!) in a more controlled environment – while also keeping track of sticker drops!</p>
+</section>
+</section>
+<section id="tips-and-hot-takes" class="level2">
+<h2 class="anchored" data-anchor-id="tips-and-hot-takes">Tips and hot takes</h2>
+<p>There are also a few things that I wanted to share with other people planning to attend next year.</p>
+<section id="if-youre-an-introvert-know-that-there-are-others-like-you" class="level3">
+<h3 class="anchored" data-anchor-id="if-youre-an-introvert-know-that-there-are-others-like-you">1. If you’re an introvert, know that there are others like you</h3>
+<p>Yes, you, the person standing awkwardly in a corner while everyone else is mingling and seems to be having a great time. There are other people doing exactly the same. Try to approach them with some questions, maybe? Here are some basic conversation starters once you’re past the “what do you do for work” stage that are not <em>too</em> boring but also not too unrealistic:</p>
+<ul>
+<li>What talks did you like the most so far?</li>
+<li>What did you learn that you are excited to try?</li>
+<li>What’s your favorite R package?</li>
+<li>What is the R community like where you’re based?</li>
+<li>Is it your first time in {city}? Do you have any plans apart from the conf?</li>
+</ul>
+</section>
+<section id="dont-assume-people-know-the-same-things-you-do" class="level3">
+<h3 class="anchored" data-anchor-id="dont-assume-people-know-the-same-things-you-do">2. Don’t assume people know the same things you do</h3>
+<p>Talking to people who are very knowledgeable can be either intimidating or mind-opening. I had a great time talking to a much more experienced developer who explained so much about their project in a friendly way that I felt welcomed to share my thoughts and ask questions. Be mindful not to be the arrogant person (even if unconsciously) who assumes people know what you’re talking about.</p>
+</section>
+<section id="its-ok-to-take-a-break" class="level3">
+<h3 class="anchored" data-anchor-id="its-ok-to-take-a-break">3. It’s OK to take a break</h3>
+<p>By the end of the second day, I was physically and mentally exhausted. To be honest, I was recovering from a cold a few days before my flight, and was feeling great, but two days of talking non-stop, some alcohol and early mornings made me so hoarse I could barely hear myself speak.</p>
+<p>So I decided to skip some talks (that I knew would be recorded anyway, so I could catch up later) and rested. During one of my breaks, I had a lovely time making friendship bracelets at the arts and crafts table with other people who were recharging their social batteries. I’m also not much of a morning person, so I purposefully missed breakfast on the last day to have tea and some quiet time by myself outside the hotel.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://hirota.dev/posts/2023-10-21_posit-conf/hyatt.webp" class="img-fluid figure-img" alt="posit conf logo at the entrance of the hyatt hotel."></p>
+<figcaption class="figure-caption">Saying farewell to posit::conf(2023)</figcaption>
+</figure>
+</div>
+<p>It was absolutely amazing to attend posit::conf(2023). Next year it’s going to be in Seattle and I’m already thinking about <em>how</em> I’m going to be there. Fingers crossed for getting a talk acceppted! 🤞</p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>events</category>
+  <category>R</category>
+  <guid>https://hirota.dev/posts/2023-10-21_posit-conf/index.html</guid>
+  <pubDate>Sat, 21 Oct 2023 00:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>
