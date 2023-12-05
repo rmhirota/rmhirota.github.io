@@ -34,7 +34,7 @@ slow, but I wanted to lay the groundwork. I'm starting by installing
 useful functions to help you with Advent of Code, so you can focus on actually
 solving the puzzles.
 
-```
+```r
 # install.packages("devtools")
 devtools::install_github("clente/aor")
 ```
@@ -42,7 +42,7 @@ devtools::install_github("clente/aor")
 Once installed and with the right cookie configurations (all explained in
 `aor`'s readme), I can simply run
 
-```
+```r
 > aor::day_start("2023-12-01", "aoc2023/")
 ✔ Fetched puzzle.
 ✔ Fetched input.
@@ -85,7 +85,7 @@ numbers that I needed to clear part 1.
 ::: {.callout-tip appearance="simple" collapse="true"}
 ### Answer for part 1, Day 1 -- click to see my solution
 
-```
+```r
 input <- "aoc2023/01_trebuchet/input.txt"
 input |>
   readr::read_csv(col_names = "input", show_col_types = FALSE) |>
@@ -124,13 +124,13 @@ In this example, the calibration values are `29`, `83`, `13`, `24`,
 My first idea was using regex to get all ocurrences of numbers _and_ spelled out
 numbers. So my regex would look something like
 
-```
+```r
 rx <- ("[0-9]|one|two|three|four|five|six|seven|eight|nine")
 ```
 
 Then, I could switch the spelled out numbers, paste the first and last ones and sum them up.
 
-```
+```r
 switch_numbers <- function(num) {
   if (stringr::str_detect(num, "[a-z]")) {
     result <- switch(
@@ -160,13 +160,13 @@ input |>
 
 *But*, turns out I was wrong. You can see the problem with `str_extract_all` in this case:
 
-```
+```r
 > stringr::str_extract_all("threeight", rx)
 [[1]]
 [1] "three"
 ```
 What I actually wanted:
-```
+```r
 [[1]]
 [1] "three"  [2] "eight"
 ```
@@ -180,7 +180,7 @@ This takes us to attempt #2, where I try to take this problem into account with 
 ::: {.callout-tip appearance="simple" collapse="true"}
 ### Second try for part 2, Day 1 -- click to see my solution
 
-```
+```r
 switch_numbers <- function(num) {
   if (stringr::str_detect(num, "[a-z]")) {
     result <- switch(
