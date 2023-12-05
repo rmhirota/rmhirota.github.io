@@ -1,5 +1,7 @@
 project:
   type: website
+  resources:
+    - CNAME
 
 website:
   site-url: "https://hirota.dev"
