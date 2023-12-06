@@ -10,7 +10,482 @@
 <atom:link href="https://hirota.dev/blog.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Sun, 03 Dec 2023 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 05 Dec 2023 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Advent of Code: Day 2</title>
+  <dc:creator>Renata Hirota</dc:creator>
+  <link>https://hirota.dev/posts/2023-12-05-aor2/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://hirota.dev/posts/2023-12-05-aor2/xmas2.webp" class="preview-image img-fluid figure-img" alt="Red ball ornament"></p>
+<figcaption class="figure-caption">Photo by <a href="https://unsplash.com/@melpoole?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Mel Poole</a> on <a href="https://unsplash.com/photos/two-poinsettia-wreathes-izPKjgCxGfM?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Unsplash</a></figcaption>
+</figure>
+</div>
+<p>If you haven’t read the <a href="https://hirota.dev/posts/2023-12-03-aor/">previous post</a>, I suggest you go back and do it. It’s got a little more context on <a href="https://adventofcode.com/2023/about">Advent of Code</a> and it’s a great way to see <a href="https://github.com/clente/aor"><code>{aor}</code></a> in action!</p>
+<p>I know said I had exams and papers to write and I wasn’t expecting to write again so soon, but I was told Day 2 was easier than Day 1, so here I am! :)</p>
+<section id="day-2-cube-conundrum" class="level2">
+<h2 class="anchored" data-anchor-id="day-2-cube-conundrum">Day 2: Cube Conundrum</h2>
+<p>Let’s start by fetching the puzzle and input for Day 2:</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> aor<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">day_start</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"2023-12-02"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"aoc2023/"</span>)</span>
+<span id="cb1-2">✔ Fetched puzzle.</span>
+<span id="cb1-3">✔ Fetched input.</span>
+<span id="cb1-4">✔ Created directory aoc2023<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>02_cube_conundrum</span>
+<span id="cb1-5">✔ Wrote part <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> to aoc2023<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>02_cube_conundrum<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>puzzle.R                                                                                        </span>
+<span id="cb1-6">✔ Wrote input to aoc2023<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>02_cube_conundrum<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>input.txt                                                                                        </span>
+<span id="cb1-7">ℹ To fetch part <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, run <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">`</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">aor::day_continue("2023-12-02", "aoc2023/02_cube_conundrum/puzzle.R")</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">`</span></span></code></pre></div>
+<p>Again, there are many ways to solve the puzzle, but I ended up using <code>dplyr</code> and <code>tidyr</code>. Thankfully Day 2 was easier than Day 1; all you had to do was count red, green and blue balls and check some given conditions.</p>
+<p>For the first part of the puzzle, you had to find all posible games given a number of balls (so you had to filter out games that exceeded that).</p>
+<blockquote class="blockquote">
+<p>For example, the record of a few games might look like this:<br>
+Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green<br>
+Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue<br>
+Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red<br>
+Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red<br>
+Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green<br>
+In game 1, three sets of cubes are revealed from the bag (and then put back again). The first set is 3 blue cubes and 4 red cubes; the second set is 1 red cube, 2 green cubes, and 6 blue cubes; the third set is only 2 green cubes. The Elf would first like to know which games would have been possible if the bag contained <em>only 12 red cubes, 13 green cubes, and 14 blue cubes</em>?</p>
+</blockquote>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer for part 1, Day 2 – click to see my solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">input <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"aoc2023/02_cube_conundrum/input.txt"</span></span>
+<span id="cb2-2"></span>
+<span id="cb2-3">input <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb2-4">  readr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">read_delim</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">col_names =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"game_id"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"sets"</span>), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">show_col_types =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb2-5">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb2-6">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">game_id =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(stringr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_extract</span>(game_id, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"[0-9]+"</span>)),</span>
+<span id="cb2-7">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">sets =</span> stringr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_split</span>(sets, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">";"</span>)</span>
+<span id="cb2-8">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb2-9">  tidyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">unnest</span>(sets) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb2-10">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb2-11">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">green =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(stringr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_extract</span>(sets, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"[0-9]+(?= green)"</span>)),</span>
+<span id="cb2-12">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">blue =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(stringr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_extract</span>(sets, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"[0-9]+(?= blue)"</span>)),</span>
+<span id="cb2-13">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">red =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(stringr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_extract</span>(sets, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"[0-9]+(?= red)"</span>))</span>
+<span id="cb2-14">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb2-15">  tidyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">replace_na</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">list</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">green =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">blue =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">red =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb2-16">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">group_by</span>(game_id) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb2-17">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(red <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|</span> green <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">13</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|</span> blue <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">14</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb2-18">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">distinct</span>(game_id, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">.keep_all =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb2-19">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">pull</span>(game_id) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb2-20">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">setdiff</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> _) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb2-21">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sum</span>()</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>For part 2, you had to find the mininum number of balls of each color for each game.</p>
+<blockquote class="blockquote">
+<p>As you continue your walk, the Elf poses a second question: in each game you played, what is the <em>fewest number of cubes of each color</em> that could have been in the bag to make the game possible? Again consider the example games from earlier:<br>
+Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green<br>
+Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue<br>
+In game 1, the game could have been played with as few as 4 red, 2 green, and 6 blue cubes. If any color had even one fewer cube, the game would have been impossible.<br>
+Game 2 could have been played with a minimum of 1 red, 3 green, and 4 blue cubes.</p>
+</blockquote>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer for part 2, Day 2 – click to see my solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">input <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-2">  readr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">read_delim</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">col_names =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"game_id"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"sets"</span>), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">show_col_types =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-3">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb3-4">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">game_id =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(stringr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_extract</span>(game_id, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"[0-9]+"</span>)),</span>
+<span id="cb3-5">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">sets =</span> stringr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_split</span>(sets, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">";"</span>)</span>
+<span id="cb3-6">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-7">  tidyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">unnest</span>(sets) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-8">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb3-9">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">green =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(stringr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_extract</span>(sets, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"[0-9]+(?= green)"</span>)),</span>
+<span id="cb3-10">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">blue =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(stringr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_extract</span>(sets, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"[0-9]+(?= blue)"</span>)),</span>
+<span id="cb3-11">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">red =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.numeric</span>(stringr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_extract</span>(sets, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"[0-9]+(?= red)"</span>))</span>
+<span id="cb3-12">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-13">  tidyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">replace_na</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">list</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">green =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">blue =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">red =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-14">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">group_by</span>(game_id) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-15">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">summarise</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">max_red =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">max</span>(red), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">max_green =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">max</span>(green), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">max_blue =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">max</span>(blue)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-16">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">power =</span> max_red <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> max_green <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> max_blue) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-17">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">pull</span>(power) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-18">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sum</span>()</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>If you have any other ideas, feel free to tell me more on <a href="https://fosstodon.org/@rmhirota">Mastodon</a> or <a href="https://bsky.app/profile/hirota.dev">Bluesky</a>.</p>
+<p>Happy coding! &lt;3</p>
+
+
+</section>
+
+ ]]></description>
+  <category>advent of code</category>
+  <category>R</category>
+  <guid>https://hirota.dev/posts/2023-12-05-aor2/index.html</guid>
+  <pubDate>Tue, 05 Dec 2023 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Advent of Code in R</title>
   <dc:creator>Renata Hirota</dc:creator>
