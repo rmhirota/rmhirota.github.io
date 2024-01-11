@@ -25,7 +25,7 @@ website:
       - text: "Blog"
         file: blog/index.qmd
       - icon: rss
-        href: blog.xml
+        href: blog/index.xml
       - text: About
         file: about/index.qmd
 
