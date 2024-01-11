@@ -15,17 +15,19 @@ website:
     left:
       - text: "Home"
         file: index.qmd
+      - text: "Projects"
+        file: projects/index.qmd
       - text: "Talks"
-        file: talks.qmd
+        file: talks/index.qmd
       - text: "Awards"
-        file: awards.qmd
+        file: awards/index.qmd
     right:
       - text: "Blog"
-        file: blog.qmd
+        file: blog/index.qmd
       - icon: rss
         href: blog.xml
       - text: About
-        file: about.qmd
+        file: about/index.qmd
 
 format:
   html:

@@ -1,0 +1,13 @@
+---
+title: "Projects"
+site-url: "https://hirota.dev"
+listing:
+  contents: .
+  sort: "date desc"
+  type: grid
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  feed: true
+page-layout: full
+---
