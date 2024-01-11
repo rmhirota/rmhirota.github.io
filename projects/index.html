@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Renata Hirota">
-<meta name="dcterms.date" content="2023-10-21">
-<meta name="description" content="And everything I wish people had told me beforehand">
 
-<title>Renata Hirota’s website - What I learned at posit::conf(2023)</title>
+<title>Renata Hirota’s website - Projects</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -26,22 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -62,16 +61,45 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
-<link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Renata Hirota’s website - What I learned at posit::conf(2023)">
-<meta property="og:description" content="And everything I wish people had told me beforehand">
-<meta property="og:image" content="https://hirota.dev/posts/2023-10-21_posit-conf/trivia.webp">
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+<link rel="alternate" type="application/rss+xml" title="Renata Hirota's website" href="index.xml"><meta property="og:title" content="Renata Hirota’s website - Projects">
 <meta property="og:site-name" content="Renata Hirota's website">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -84,30 +112,34 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
+    <a class="nav-link" href="../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../talks.html" rel="" target="">
+    <a class="nav-link active" href="../projects/index.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../talks/index.html" rel="" target="">
  <span class="menu-text">Talks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../awards.html" rel="" target="">
+    <a class="nav-link" href="../awards/index.html" rel="" target="">
  <span class="menu-text">Awards</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html" rel="" target="">
+    <a class="nav-link" href="../blog/index.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="../../blog.xml" rel="" target=""><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../blog.xml" rel="" target=""><i class="bi bi-rss" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
+    <a class="nav-link" href="../about/index.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -118,122 +150,76 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">What I learned at posit::conf(2023)</h1>
-                  <div>
-        <div class="description">
-          And everything I wish people had told me beforehand
-        </div>
-      </div>
-                          <div class="quarto-categories">
-                <div class="quarto-category">events</div>
-                <div class="quarto-category">R</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Renata Hirota </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">October 21, 2023</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="environmental">environmental <span class="quarto-category-count">(1)</span></div><div class="category" data-category="health">health <span class="quarto-category-count">(1)</span></div><div class="category" data-category="infoamazonia">infoamazonia <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
-
-
-
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="trivia.webp" class="preview-image img-fluid figure-img" alt="A group of six people smiling with a backdrop illustrated with hex stickers"></p>
-<figcaption class="figure-caption">Our team at trivia night</figcaption>
-</figure>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Projects</h1>
 </div>
-<p>I was honored to be an <strong>Opportunity Scholar</strong> on my first posit::conf ever, which means admission tickets, hotel and flight expeses were covered by Posit. Considering that just the admission ticket is a <em>lot</em> of money, especially if you come from a country with a weak currency, I would probably never even consider attending the conference out of my own pocket (although now that I’ve been to one, I’m dying to go again next year).</p>
-<section id="so-what-happened-at-positconf" class="level2">
-<h2 class="anchored" data-anchor-id="so-what-happened-at-positconf">So, what happened at posit::conf?</h2>
-<p>I was (quite literally) speechless for most of the event (more on that later). It was so inspiring to see other Opportunity Scholars giving talks, sharing meals with fellow R nerds, and talking about everything that R allows us to do, from awesome presentations to great dataviz and reproducible modeling. It was also so nice to find common interests with various people outside of strictly professional topics.</p>
-<p>I don’t think I’ll be able to summarize all 4 days, but here goes nothing. The following is a short list of my personal highlights of the conference. If you want to have an overall view of Posit’s announcements, head over to Posit’s blog post where they listed their <a href="https://posit.co/blog/five-takeaways-from-posit-conf-2023/">five takeaways from posit::conf(2023)</a>,</p>
-<section id="quarto-quarto-and-more-quarto" class="level3">
-<h3 class="anchored" data-anchor-id="quarto-quarto-and-more-quarto">1. Quarto, quarto and more quarto</h3>
-<p>So many things are happening with Quarto! I’m especially excited to try out <strong>typst</strong>, which promises to be friendlier than LaTeX. I also finally started this blog and website, which had been in my plans for years.</p>
-</section>
-<section id="devops-for-data-scientists" class="level3">
-<h3 class="anchored" data-anchor-id="devops-for-data-scientists">2. DevOps for data scientists</h3>
-<p>DevOps was my choice for the first two days of workshops. It’s a shame that, because it was a two-day workshop, that meant I couldn’t do two different workshops, but I regret nothing. I learned so much (who’s intimidated by Docker now?? Not me, that’s for sure. Well, maybe just a little bit, but hey, baby steps), and once I got home, the project I was working on during the workshop evolved into this website. I bought the domain a few months back, and this was the push I needed to actually do something with it.</p>
-</section>
-<section id="r-ladies-are-awesome" class="level3">
-<h3 class="anchored" data-anchor-id="r-ladies-are-awesome">3. R-Ladies are awesome</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="rladies.webp" class="img-fluid figure-img" alt="A big group of people sitting and standing after the R-Ladies meetup."></p>
-<figcaption class="figure-caption">R-Ladies gathered at the Hyatt for Q&amp;A</figcaption>
-</figure>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+
+
+
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="health,environmental,infoamazonia" data-listing-date-sort="1630454400000" data-listing-file-modified-sort="1704998046564" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<a href="../projects/engolindo-fumaca/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="engolindo-fumaca/engolindo-fumaca.webp" alt="SMOKE IN THE TAPAJÓS NATIONAL FOREST, AMAZON REGION OF PARÁ STATE, SEPTEMBER 2020" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Engolindo Fumaça (Inhaling Smoke)
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('health'); return false;">
+health
 </div>
-<p>I’m part of the local chapter of R-Ladies in Sao Paulo but had little to no interaction with the global team. The R-Ladies meetup on the last day was a great opportunity to better understand the workings of the organization and be inspired by awesome people who do such important work within the R community. More details of the meetup are available at <a href="https://rladies.org/news/2023-10-09-positconf-chicago-meetup/">this blog post</a>.</p>
-</section>
-<section id="the-discord-server" class="level3">
-<h3 class="anchored" data-anchor-id="the-discord-server">4. The Discord server</h3>
-<p>Being in a place with hundreds of people can be a little overwhelming. I found that the posit::conf Discord server was a great way to start a conversation (kudos for the foodie channel!) in a more controlled environment – while also keeping track of sticker drops!</p>
-</section>
-</section>
-<section id="tips-and-hot-takes" class="level2">
-<h2 class="anchored" data-anchor-id="tips-and-hot-takes">Tips and hot takes</h2>
-<p>There are also a few things that I wanted to share with other people planning to attend next year.</p>
-<section id="if-youre-an-introvert-know-that-there-are-others-like-you" class="level3">
-<h3 class="anchored" data-anchor-id="if-youre-an-introvert-know-that-there-are-others-like-you">1. If you’re an introvert, know that there are others like you</h3>
-<p>Yes, you, the person standing awkwardly in a corner while everyone else is mingling and seems to be having a great time. There are other people doing exactly the same. Try to approach them with some questions, maybe? Here are some basic conversation starters once you’re past the “what do you do for work” stage that are not <em>too</em> boring but also not too unrealistic:</p>
-<ul>
-<li>What talks did you like the most so far?</li>
-<li>What did you learn that you are excited to try?</li>
-<li>What’s your favorite R package?</li>
-<li>What is the R community like where you’re based?</li>
-<li>Is it your first time in {city}? Do you have any plans apart from the conf?</li>
-</ul>
-</section>
-<section id="dont-assume-people-know-the-same-things-you-do" class="level3">
-<h3 class="anchored" data-anchor-id="dont-assume-people-know-the-same-things-you-do">2. Don’t assume people know the same things you do</h3>
-<p>Talking to people who are very knowledgeable can be either intimidating or mind-opening. I had a great time talking to a much more experienced developer who explained so much about their project in a friendly way that I felt welcomed to share my thoughts and ask questions. Be mindful not to be the arrogant person (even if unconsciously) who assumes people know what you’re talking about.</p>
-</section>
-<section id="its-ok-to-take-a-break" class="level3">
-<h3 class="anchored" data-anchor-id="its-ok-to-take-a-break">3. It’s OK to take a break</h3>
-<p>By the end of the second day, I was physically and mentally exhausted. To be honest, I was recovering from a cold a few days before my flight, and was feeling great, but two days of talking non-stop, some alcohol and early mornings made me so hoarse I could barely hear myself speak.</p>
-<p>So I decided to skip some talks (that I knew would be recorded anyway, so I could catch up later) and rested. During one of my breaks, I had a lovely time making friendship bracelets at the arts and crafts table with other people who were recharging their social batteries. I’m also not much of a morning person, so I purposefully missed breakfast on the last day to have tea and some quiet time by myself outside the hotel.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="hyatt.webp" class="img-fluid figure-img" alt="posit conf logo at the entrance of the hyatt hotel."></p>
-<figcaption class="figure-caption">Saying farewell to posit::conf(2023)</figcaption>
-</figure>
+<div class="listing-category" onclick="window.quartoListingCategory('environmental'); return false;">
+environmental
 </div>
-<p>It was absolutely amazing to attend posit::conf(2023). Next year it’s going to be in Seattle and I’m already thinking about <em>how</em> I’m going to be there. Fingers crossed for getting a talk acceppted! 🤞</p>
+<div class="listing-category" onclick="window.quartoListingCategory('infoamazonia'); return false;">
+infoamazonia
+</div>
+</div>
+<div class="card-text listing-description">
+Beyond global warming: Effects Of wildfires on the health of the Brazilian Amazon population during the Covid-19 pandemic
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
 
-
-</section>
-</section>
-
-</main> <!-- /main -->
+</div>
+<div class="listing-date">
+Sep 1, 2021
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

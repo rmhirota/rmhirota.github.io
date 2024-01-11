@@ -1,10 +1,16 @@
 [
   {
-    "listing": "/blog.html",
+    "listing": "/blog/index.html",
     "items": [
-      "/posts/2023-12-05-aor2/index.html",
-      "/posts/2023-12-03-aor/index.html",
-      "/posts/2023-10-21_posit-conf/index.html"
+      "/blog/posts/2023-12-05-aor2/index.html",
+      "/blog/posts/2023-12-03-aor/index.html",
+      "/blog/posts/2023-10-21_posit-conf/index.html"
+    ]
+  },
+  {
+    "listing": "/projects/index.html",
+    "items": [
+      "/projects/engolindo-fumaca/index.html"
     ]
   }
 ]

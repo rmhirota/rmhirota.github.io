@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Renata Hirota&#39;s website</title>
+<link>https://hirota.dev/projects/index.html</link>
+<atom:link href="https://hirota.dev/projects/index.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<generator>quarto-1.3.450</generator>
+<lastBuildDate>Wed, 01 Sep 2021 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Engolindo Fumaça (Inhaling Smoke)</title>
+  <link>https://hirota.dev/projects/engolindo-fumaca/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://hirota.dev/projects/engolindo-fumaca/engolindo-fumaca.webp" class="preview-image img-fluid figure-img" alt="SMOKE IN THE TAPAJÓS NATIONAL FOREST, AMAZON REGION OF PARÁ STATE, SEPTEMBER 2020"></p>
+<figcaption class="figure-caption">Photo: Marizilda Cruppe / Amazônia Real</figcaption>
+</figure>
+</div>
+<p>Inhaling Smoke is a special project that investigates the effects of air pollution caused by wildfires on the health of the Brazilian Amazon population during the pandemic.</p>
+<p>In 2020, the tragic combination of the Covid-19 pandemic and one of the most severe cycles of fires and deforestation in the Brazilian Amazon meant that residents of fire-affected regions were also more exposed to the risk of Covid-19 worsening. Breathing, especially in municipalities in the states of Rondônia, Mato Grosso, Acre and Amazonas, has become more dangerous.</p>
+<p>This toxic synergy was the object of an unprecedented data analysis carried out by a multidisciplinary team of journalists, geographers, statisticians from InfoAmazonia, in partnership with researchers from LabGama, from the Federal University of Acre, and Fiocruz’s Climate and Health Observatory/ICICT. The project was supported by Stanford University through the Big Local News program, which aims to open up data in formats that can be replicated by journalists around the world.</p>
+<p><em>Learn more about this project <a href="https://infoamazonia.org/en/project/inhaling-smoke/">here</a>.</em></p>
+
+
+
+ ]]></description>
+  <category>health</category>
+  <category>environmental</category>
+  <category>infoamazonia</category>
+  <guid>https://hirota.dev/projects/engolindo-fumaca/index.html</guid>
+  <pubDate>Wed, 01 Sep 2021 00:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

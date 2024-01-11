@@ -1,35 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://hirota.dev/awards.html</loc>
-    <lastmod>2023-12-06T00:56:38.753Z</lastmod>
+    <loc>https://hirota.dev/projects/engolindo-fumaca/index.html</loc>
+    <lastmod>2024-01-11T18:37:20.339Z</lastmod>
   </url>
   <url>
-    <loc>https://hirota.dev/posts/2023-10-21_posit-conf/index.html</loc>
-    <lastmod>2023-12-06T00:56:37.969Z</lastmod>
+    <loc>https://hirota.dev/blog/posts/2023-12-03-aor/index.html</loc>
+    <lastmod>2024-01-11T18:37:19.707Z</lastmod>
   </url>
   <url>
-    <loc>https://hirota.dev/about.html</loc>
-    <lastmod>2023-12-06T00:56:36.941Z</lastmod>
+    <loc>https://hirota.dev/blog/posts/2023-10-21_posit-conf/index.html</loc>
+    <lastmod>2024-01-11T18:37:18.639Z</lastmod>
   </url>
   <url>
     <loc>https://hirota.dev/index.html</loc>
-    <lastmod>2023-12-06T00:56:36.205Z</lastmod>
+    <lastmod>2024-01-11T18:37:17.811Z</lastmod>
   </url>
   <url>
-    <loc>https://hirota.dev/talks.html</loc>
-    <lastmod>2023-12-06T00:56:35.653Z</lastmod>
+    <loc>https://hirota.dev/awards/index.html</loc>
+    <lastmod>2024-01-11T18:37:17.291Z</lastmod>
   </url>
   <url>
-    <loc>https://hirota.dev/blog.html</loc>
-    <lastmod>2023-12-06T00:56:36.693Z</lastmod>
+    <loc>https://hirota.dev/talks/index.html</loc>
+    <lastmod>2024-01-11T18:37:16.747Z</lastmod>
   </url>
   <url>
-    <loc>https://hirota.dev/posts/2023-12-03-aor/index.html</loc>
-    <lastmod>2023-12-06T00:56:37.501Z</lastmod>
+    <loc>https://hirota.dev/about/index.html</loc>
+    <lastmod>2024-01-11T18:37:17.543Z</lastmod>
   </url>
   <url>
-    <loc>https://hirota.dev/posts/2023-12-05-aor2/index.html</loc>
-    <lastmod>2023-12-06T00:56:38.525Z</lastmod>
+    <loc>https://hirota.dev/blog/index.html</loc>
+    <lastmod>2024-01-11T18:37:18.271Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hirota.dev/blog/posts/2023-12-05-aor2/index.html</loc>
+    <lastmod>2024-01-11T18:37:19.155Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hirota.dev/projects/index.html</loc>
+    <lastmod>2024-01-11T18:37:20.063Z</lastmod>
   </url>
 </urlset>
