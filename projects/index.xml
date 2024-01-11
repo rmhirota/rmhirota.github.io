@@ -10,7 +10,29 @@
 <atom:link href="https://hirota.dev/projects/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Wed, 01 Sep 2021 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 10 Jul 2023 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Mapping mechanized agriculture in indigenous lands</title>
+  <link>https://hirota.dev/projects/commodity-crops-indigenous-lands/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<p><img src="https://hirota.dev/projects/commodity-crops-indigenous-lands/lavouras.webp" class="preview-image img-fluid"></p>
+<p>A study commissioned by news outlet O Joio e o Trigo revealed that the state of Mato Grosso, an agricultural powerhouse, hosts approximately 73,000 hectares of mechanized plantations within its indigenous lands.</p>
+<p>The research, conducted by geographer Felipe Sodré and geologist Dr.&nbsp;Natalie Aubet, employed satellite imagery from January 2021 to May 2023, utilizing advanced segmentation techniques for accurate mapping. Of the 72 indigenous territories in the state, 21 were found to contain commodity crops, raising concerns about leases, invasions, and ongoing legal disputes. This unprecedented insight into the intersection of agriculture and indigenous lands underscores the complex dynamics at play in Mato Grosso.</p>
+<p>The interactive maps featured in the story were made by me with Leaflet from the original data provided by the researchers.</p>
+<p><em>Read more <a href="https://ojoioeotrigo.com.br/2023/07/mato-grosso-tem-lavoura-mecanizada-dentro-de-terras-indigenas/">here</a>.</em></p>
+
+
+
+ ]]></description>
+  <category>agribusiness</category>
+  <category>spatial</category>
+  <category>o joio e o trigo</category>
+  <guid>https://hirota.dev/projects/commodity-crops-indigenous-lands/index.html</guid>
+  <pubDate>Mon, 10 Jul 2023 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Engolindo Fumaça (Inhaling Smoke)</title>
   <link>https://hirota.dev/projects/engolindo-fumaca/index.html</link>
