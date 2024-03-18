@@ -6,24 +6,147 @@
       version="2.0">
 <channel>
 <title>Renata Hirota&#39;s website</title>
-<link>https://hirota.dev/blog/index.html</link>
+<link>https://hirota.dev/blog/</link>
 <atom:link href="https://hirota.dev/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
-<generator>quarto-1.3.450</generator>
-<lastBuildDate>Tue, 05 Dec 2023 00:00:00 GMT</lastBuildDate>
+<generator>quarto-1.4.551</generator>
+<lastBuildDate>Mon, 18 Mar 2024 00:00:00 GMT</lastBuildDate>
 <item>
-  <title>Advent of Code: Day 2</title>
+  <title>D&amp;D and the dice math</title>
   <dc:creator>Renata Hirota</dc:creator>
-  <link>https://hirota.dev/blog/posts/2023-12-05-aor2/index.html</link>
+  <link>https://hirota.dev/blog/posts/2024-03-18_dice-math/</link>
   <description><![CDATA[ 
+
 
 
 
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://hirota.dev/blog/posts/2023-12-05-aor2/xmas2.webp" class="preview-image img-fluid figure-img" alt="Red ball ornament"></p>
-<figcaption class="figure-caption">Photo by <a href="https://unsplash.com/@melpoole?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Mel Poole</a> on <a href="https://unsplash.com/photos/two-poinsettia-wreathes-izPKjgCxGfM?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Unsplash</a></figcaption>
+<p><img src="https://hirota.dev/blog/posts/2024-03-18_dice-math/d20.webp" class="preview-image img-fluid figure-img"></p>
+<figcaption>Photo by <a href="https://unsplash.com/@timothycdykes?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Timothy Dykes</a> on <a href="https://unsplash.com/photos/a-group-of-blue-and-brown-dice-sitting-on-top-of-each-other-jfovL-sc0tQ?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Unsplash</a></figcaption>
+</figure>
+</div>
+<p>Since the Covid pandemic, I really got into D&amp;D. I had never played before, but had friends who had long lasting parties and were DMs, so it was the perfect opportunity since we were all locked up in our houses.</p>
+<p>Turns out that it didn’t last more than a few months: we started one campaign at level 1 and disbanded shortly after reaching level 6. Then I found out about Critical Role and became a huge fan (although I’ve given up on Campaign 3…) and started playing with my partner and his friends.</p>
+<p>As you can imagine, it wasn’t too long before I started DMing myself and I eventually started watching some of Matt Colville’s Twitch lives and YouTube videos (really recommend those for DMs!). So when Matt’s company MCDM started designing their own RPG, I was pretty excited (if you want to know more about it, you can listen to the podcast <a href="https://www.youtube.com/@the_dice_society">The Dice Society</a>, which covers news on the development of the game).</p>
+<p>For me, the game changer for this new RPG is the <em>dice</em>. Everyone who plays D&amp;D, be it 5th edition, AD&amp;D or anything in between, is used to rolling d20s, 20-sided dice<sup>1</sup>. On the other hand, MCDM’s RPG uses 2 regular, 6-sided dice for attacking, making ability checks and other situations in which your character might need to roll. As of now (March 2024), the game is still in development, so it still might change, but they made it very clear that they want to keep the 2d6 system in the final version of the game.</p>
+<section id="why-i-love-the-idea-of-the-2d6-system" class="level2">
+<h2 class="anchored" data-anchor-id="why-i-love-the-idea-of-the-2d6-system">Why I love the idea of the 2d6 system</h2>
+<p>I know: d6s are kind of boring compared to d20s, right? Every Farkle and Yahtzee player uses them, after all. But to me, that could be a great advantage: it’s easy to understand and hit the ground running as soon as you know the basic rules, no need to go through weird dice<sup>2</sup>.</p>
+<p>And although I’ve become some sort of <em>dice hoarder</em> for the past years, I love the idea of rolling two dice, and more than that, two d6s, because of <em>variance</em>.</p>
+<p>Let’s assume we’re rolling a d20. The possible outcomes range from 1 to 20, and tecnically they all have the same probability, 1/20 = 5%. When rolling 2d6, there is a smaller range of possibilities (2 to 12) and they are not uniformally probable (you would expect to roll 12 much less frequently than 7, for example).</p>
+<p>That means your <em>modifier</em> has a much more significant impact on the final result than sheer luck<sup>3</sup>. If you are consistently rolling some value near the mean (7), how good you are at a certain ability will more accurately translate to how successful you are in a skill check or attack. Sure, you can still fumble or do exceptionally well, but those events are less common.</p>
+</section>
+<section id="simulating-dice-rolls" class="level2">
+<h2 class="anchored" data-anchor-id="simulating-dice-rolls">Simulating dice rolls</h2>
+<p>I remember when I was younger and my Math teacher gave us an experiment: roll two dice 100 times and take note of the results. At the end of the class, we drew a bar plot with the results and found out that everyone drew basically the same plot.</p>
+<p>Let’s do the same, but with the RPG context and in a larger scale. We’ll check how the outcome of a character with a dexterity bonus of +3 would roll for a skill check using different dice systems. (MCDM’s stats are not exactly the same, but let’s just assume they are for this thought exercise.)</p>
+<section id="rolling-1d20-1000-times" class="level3">
+<h3 class="anchored" data-anchor-id="rolling-1d20-1000-times">Rolling 1d20 1000 times</h3>
+<p>Assuming that every side on a 20-sided die is physically the same, it’s fair to conclude that the numbers 1 through 20 have the same probability of being the outcome. Let’s imagine that we’re rolling the die 100 times and counting how many times each side appears.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://hirota.dev/blog/posts/2024-03-18_dice-math/index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Now let’s do the same, rolling the die 1000 times.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://hirota.dev/blog/posts/2024-03-18_dice-math/index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The results seem random enough and there doesn’t seem to be a clear pattern. Even if we add the modifier (+3), it’s not that great a difference. The modifier matters much less then the roll of a die.</p>
+<p>As a game design, it makes sense that extremely good (or bad) results are rare, but it’s weird that average outcomes are equally probable.</p>
+</section>
+<section id="rolling-2d6-1000-times" class="level3">
+<h3 class="anchored" data-anchor-id="rolling-2d6-1000-times">Rolling 2d6 1000 times</h3>
+<p>If we were rolling only one d6, we would have a similar situation: all 6 sides have the same probability. However, by adding two dice, we invoke the <strong>Central Limit Theorem</strong>!</p>
+<p>What is that, you ask? It’s one of the most important theorems in probability theory that says that, given a sample from a random variable under certain circumstances, the sample mean tends to follow a normal distribution, even if the original variable has a different distribution other than normal. More technically, the limit of a random variable X when n -&gt; Inf is normally distributed. More on that in the next section.</p>
+<p>For now, let’s replicate the experiment we did with the d20, this time with 2d6.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://hirota.dev/blog/posts/2024-03-18_dice-math/index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This plot shows what we’ve talked before: it’s much more common to roll a 7 than, say, a 12. The same goes for the other end of the curve, too.</p>
+<p>Now let’s take a look at what happens if we increase the number of rolls to a thousand:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://hirota.dev/blog/posts/2024-03-18_dice-math/index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>And a million:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://hirota.dev/blog/posts/2024-03-18_dice-math/index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="the-math-behind-it-the-central-limit-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="the-math-behind-it-the-central-limit-theorem">The math behind it: the Central Limit Theorem</h2>
+<p>If you are not convinced by this little experiment, the <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">proof</a> for the theorem can be easily found online.</p>
+<p>I’m not going to bore you with the details because 1, this is not the place for it and 2, I’m not ashamed to admit that I don’t even remember the proof and would just copy it from someplace else anyway.</p>
+</section>
+<section id="balancing-predictability-and-uncertainty" class="level2">
+<h2 class="anchored" data-anchor-id="balancing-predictability-and-uncertainty">Balancing predictability and uncertainty</h2>
+<p>So why does a more consistent result = a better game? (To me, at least.)</p>
+<p>Of course it’s fun to have <em>some</em> unpredictability when we’re playing, otherwise we would simply discard the dice. But it’s always frustrating when you know that your character is very good in a skill but you KEEP. ROLLING. ONES.</p>
+<p>As a DM, it’s also hard to explain why that keeps happening in a way that makes sense narratively. “Oh, you see that the door is completely rotten but you simply can’t break it despite your Strength (20)” More especifically about D&amp;D, it also creates some significant differences for classes such as Bard and Rogue.</p>
+<p>I think only time will tell if MCDM’s 2d6 system works for me in the long run. But for now, I’m excited about changing things up a little and depending a little less on my misbehaving dice.</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Despite being used in older editions, d20s started being the default dice starting at D&amp;D 3rd edition.↩︎</p></li>
+<li id="fn2"><p>I hate to admit it, but I still confuse my d20s and d12s on occasion.↩︎</p></li>
+<li id="fn3"><p>Tom Dunn has written a great series analyzing variability which I highly recommend in <a href="https://tomedunn.github.io/the-finished-book/theory/variability-attacks/">The Finished Book</a>.↩︎</p></li>
+</ol>
+</section></div> ]]></description>
+  <category>stats</category>
+  <category>RPG</category>
+  <guid>https://hirota.dev/blog/posts/2024-03-18_dice-math/</guid>
+  <pubDate>Mon, 18 Mar 2024 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Advent of Code: Day 2</title>
+  <dc:creator>Renata Hirota</dc:creator>
+  <link>https://hirota.dev/blog/posts/2023-12-05-aor2/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://hirota.dev/blog/posts/2023-12-05-aor2/xmas2.webp" class="preview-image img-fluid figure-img"></p>
+<figcaption>Photo by <a href="https://unsplash.com/@melpoole?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Mel Poole</a> on <a href="https://unsplash.com/photos/two-poinsettia-wreathes-izPKjgCxGfM?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Unsplash</a></figcaption>
 </figure>
 </div>
 <p>If you haven’t read the <a href="https://hirota.dev/posts/2023-12-03-aor/">previous post</a>, I suggest you go back and do it. It’s got a little more context on <a href="https://adventofcode.com/2023/about">Advent of Code</a> and it’s a great way to see <a href="https://github.com/clente/aor"><code>{aor}</code></a> in action!</p>
@@ -46,17 +169,23 @@ font-style: inherit;">"aoc2023/"</span>)</span>
 <span id="cb1-3">✔ Fetched input.</span>
 <span id="cb1-4">✔ Created directory aoc2023<span class="sc" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">/</span>02_cube_conundrum</span>
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">02</span>_cube_conundrum</span>
 <span id="cb1-5">✔ Wrote part <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span> to aoc2023<span class="sc" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">/</span>02_cube_conundrum<span class="sc" style="color: #5E5E5E;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">02</span>_cube_conundrum<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">/</span>puzzle.R                                                                                        </span>
 <span id="cb1-6">✔ Wrote input to aoc2023<span class="sc" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">/</span>02_cube_conundrum<span class="sc" style="color: #5E5E5E;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">02</span>_cube_conundrum<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">/</span>input.txt                                                                                        </span>
 <span id="cb1-7">ℹ To fetch part <span class="dv" style="color: #AD0000;
@@ -483,22 +612,23 @@ font-style: inherit;">sum</span>()</span></code></pre></div>
  ]]></description>
   <category>advent of code</category>
   <category>R</category>
-  <guid>https://hirota.dev/blog/posts/2023-12-05-aor2/index.html</guid>
+  <guid>https://hirota.dev/blog/posts/2023-12-05-aor2/</guid>
   <pubDate>Tue, 05 Dec 2023 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Advent of Code in R</title>
   <dc:creator>Renata Hirota</dc:creator>
-  <link>https://hirota.dev/blog/posts/2023-12-03-aor/index.html</link>
+  <link>https://hirota.dev/blog/posts/2023-12-03-aor/</link>
   <description><![CDATA[ 
+
 
 
 
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://hirota.dev/blog/posts/2023-12-03-aor/xmas.webp" class="preview-image img-fluid figure-img" alt="Red ball ornament"></p>
-<figcaption class="figure-caption">Photo by <a href="https://unsplash.com/@markusspiske?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Markus Spiske</a> on <a href="https://unsplash.com/photos/closeup-photo-of-red-ball-ornament-on-surface-AF_4tBQjdtc?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Unsplash</a></figcaption>
+<p><img src="https://hirota.dev/blog/posts/2023-12-03-aor/xmas.webp" class="preview-image img-fluid figure-img"></p>
+<figcaption>Photo by <a href="https://unsplash.com/@markusspiske?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Markus Spiske</a> on <a href="https://unsplash.com/photos/closeup-photo-of-red-ball-ornament-on-surface-AF_4tBQjdtc?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Unsplash</a></figcaption>
 </figure>
 </div>
 <p>It’s <em>that</em> time of the year again! 🎄</p>
@@ -534,17 +664,23 @@ font-style: inherit;">"aoc2023/"</span>)</span>
 <span id="cb2-3">✔ Fetched input.</span>
 <span id="cb2-4">✔ Created directory aoc2023<span class="sc" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">/</span>01_trebuchet</span>
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">01</span>_trebuchet</span>
 <span id="cb2-5">✔ Wrote part <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span> to aoc2023<span class="sc" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">/</span>01_trebuchet<span class="sc" style="color: #5E5E5E;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">01</span>_trebuchet<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">/</span>puzzle.R                                                                                        </span>
 <span id="cb2-6">✔ Wrote input to aoc2023<span class="sc" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">/</span>01_trebuchet<span class="sc" style="color: #5E5E5E;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">01</span>_trebuchet<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">/</span>input.txt                                                                                        </span>
 <span id="cb2-7">ℹ To fetch part <span class="dv" style="color: #AD0000;
@@ -1134,22 +1270,23 @@ font-style: inherit;">sum</span>()</span></code></pre></div>
  ]]></description>
   <category>advent of code</category>
   <category>R</category>
-  <guid>https://hirota.dev/blog/posts/2023-12-03-aor/index.html</guid>
+  <guid>https://hirota.dev/blog/posts/2023-12-03-aor/</guid>
   <pubDate>Sun, 03 Dec 2023 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>What I learned at posit::conf(2023)</title>
   <dc:creator>Renata Hirota</dc:creator>
-  <link>https://hirota.dev/blog/posts/2023-10-21_posit-conf/index.html</link>
+  <link>https://hirota.dev/blog/posts/2023-10-21_posit-conf/</link>
   <description><![CDATA[ 
+
 
 
 
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://hirota.dev/blog/posts/2023-10-21_posit-conf/trivia.webp" class="preview-image img-fluid figure-img" alt="A group of six people smiling with a backdrop illustrated with hex stickers"></p>
-<figcaption class="figure-caption">Our team at trivia night</figcaption>
+<p><img src="https://hirota.dev/blog/posts/2023-10-21_posit-conf/trivia.webp" class="preview-image img-fluid figure-img"></p>
+<figcaption>Our team at trivia night</figcaption>
 </figure>
 </div>
 <p>I was honored to be an <strong>Opportunity Scholar</strong> on my first posit::conf ever, which means admission tickets, hotel and flight expeses were covered by Posit. Considering that just the admission ticket is a <em>lot</em> of money, especially if you come from a country with a weak currency, I would probably never even consider attending the conference out of my own pocket (although now that I’ve been to one, I’m dying to go again next year).</p>
@@ -1169,8 +1306,8 @@ font-style: inherit;">sum</span>()</span></code></pre></div>
 <h3 class="anchored" data-anchor-id="r-ladies-are-awesome">3. R-Ladies are awesome</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://hirota.dev/blog/posts/2023-10-21_posit-conf/rladies.webp" class="img-fluid figure-img" alt="A big group of people sitting and standing after the R-Ladies meetup."></p>
-<figcaption class="figure-caption">R-Ladies gathered at the Hyatt for Q&amp;A</figcaption>
+<p><img src="https://hirota.dev/blog/posts/2023-10-21_posit-conf/rladies.webp" class="img-fluid figure-img"></p>
+<figcaption>R-Ladies gathered at the Hyatt for Q&amp;A</figcaption>
 </figure>
 </div>
 <p>I’m part of the local chapter of R-Ladies in Sao Paulo but had little to no interaction with the global team. The R-Ladies meetup on the last day was a great opportunity to better understand the workings of the organization and be inspired by awesome people who do such important work within the R community. More details of the meetup are available at <a href="https://rladies.org/news/2023-10-09-positconf-chicago-meetup/">this blog post</a>.</p>
@@ -1204,8 +1341,8 @@ font-style: inherit;">sum</span>()</span></code></pre></div>
 <p>So I decided to skip some talks (that I knew would be recorded anyway, so I could catch up later) and rested. During one of my breaks, I had a lovely time making friendship bracelets at the arts and crafts table with other people who were recharging their social batteries. I’m also not much of a morning person, so I purposefully missed breakfast on the last day to have tea and some quiet time by myself outside the hotel.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://hirota.dev/blog/posts/2023-10-21_posit-conf/hyatt.webp" class="img-fluid figure-img" alt="posit conf logo at the entrance of the hyatt hotel."></p>
-<figcaption class="figure-caption">Saying farewell to posit::conf(2023)</figcaption>
+<p><img src="https://hirota.dev/blog/posts/2023-10-21_posit-conf/hyatt.webp" class="img-fluid figure-img"></p>
+<figcaption>Saying farewell to posit::conf(2023)</figcaption>
 </figure>
 </div>
 <p>It was absolutely amazing to attend posit::conf(2023). Next year it’s going to be in Seattle and I’m already thinking about <em>how</em> I’m going to be there. Fingers crossed for getting a talk acceppted! 🤞</p>
@@ -1217,7 +1354,7 @@ font-style: inherit;">sum</span>()</span></code></pre></div>
  ]]></description>
   <category>events</category>
   <category>R</category>
-  <guid>https://hirota.dev/blog/posts/2023-10-21_posit-conf/index.html</guid>
+  <guid>https://hirota.dev/blog/posts/2023-10-21_posit-conf/</guid>
   <pubDate>Sat, 21 Oct 2023 00:00:00 GMT</pubDate>
 </item>
 </channel>

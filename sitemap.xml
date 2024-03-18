@@ -1,47 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://hirota.dev/projects/engolindo-fumaca/index.html</loc>
-    <lastmod>2024-01-11T18:59:17.451Z</lastmod>
+    <loc>https://hirota.dev/awards/index.html</loc>
+    <lastmod>2024-03-18T23:12:44.234Z</lastmod>
   </url>
   <url>
     <loc>https://hirota.dev/projects/index.html</loc>
-    <lastmod>2024-01-11T18:59:16.915Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hirota.dev/blog/posts/2023-12-05-aor2/index.html</loc>
-    <lastmod>2024-01-11T18:59:15.879Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hirota.dev/blog/index.html</loc>
-    <lastmod>2024-01-11T18:59:14.979Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hirota.dev/about/index.html</loc>
-    <lastmod>2024-01-11T18:59:14.227Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hirota.dev/talks/index.html</loc>
-    <lastmod>2024-01-11T18:59:13.439Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hirota.dev/awards/index.html</loc>
-    <lastmod>2024-01-11T18:59:13.983Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hirota.dev/index.html</loc>
-    <lastmod>2024-01-11T18:59:14.503Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hirota.dev/blog/posts/2023-10-21_posit-conf/index.html</loc>
-    <lastmod>2024-01-11T18:59:15.359Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hirota.dev/blog/posts/2023-12-03-aor/index.html</loc>
-    <lastmod>2024-01-11T18:59:16.455Z</lastmod>
+    <lastmod>2024-03-18T23:12:44.242Z</lastmod>
   </url>
   <url>
     <loc>https://hirota.dev/projects/commodity-crops-indigenous-lands/index.html</loc>
-    <lastmod>2024-01-11T18:59:17.187Z</lastmod>
+    <lastmod>2024-03-18T23:12:44.242Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hirota.dev/blog/index.html</loc>
+    <lastmod>2024-03-18T23:12:44.234Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hirota.dev/blog/posts/2023-12-05-aor2/index.html</loc>
+    <lastmod>2024-03-18T23:12:44.242Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hirota.dev/blog/posts/2023-12-03-aor/index.html</loc>
+    <lastmod>2024-03-18T23:12:44.242Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hirota.dev/talks/index.html</loc>
+    <lastmod>2024-03-18T23:12:44.242Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hirota.dev/blog/posts/2023-10-21_posit-conf/index.html</loc>
+    <lastmod>2024-03-18T23:12:44.238Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hirota.dev/blog/posts/2024-03-18_dice-math/index.html</loc>
+    <lastmod>2024-03-18T23:12:44.242Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hirota.dev/about/index.html</loc>
+    <lastmod>2024-03-18T23:12:44.234Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hirota.dev/projects/engolindo-fumaca/index.html</loc>
+    <lastmod>2024-03-18T23:12:44.242Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hirota.dev/index.html</loc>
+    <lastmod>2024-03-18T23:12:44.242Z</lastmod>
   </url>
 </urlset>

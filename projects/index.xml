@@ -6,15 +6,16 @@
       version="2.0">
 <channel>
 <title>Renata Hirota&#39;s website</title>
-<link>https://hirota.dev/projects/index.html</link>
+<link>https://hirota.dev/projects/</link>
 <atom:link href="https://hirota.dev/projects/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
-<generator>quarto-1.3.450</generator>
+<generator>quarto-1.4.551</generator>
 <lastBuildDate>Mon, 10 Jul 2023 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Mapping mechanized agriculture in indigenous lands</title>
-  <link>https://hirota.dev/projects/commodity-crops-indigenous-lands/index.html</link>
+  <link>https://hirota.dev/projects/commodity-crops-indigenous-lands/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -30,20 +31,21 @@
   <category>agribusiness</category>
   <category>spatial</category>
   <category>o joio e o trigo</category>
-  <guid>https://hirota.dev/projects/commodity-crops-indigenous-lands/index.html</guid>
+  <guid>https://hirota.dev/projects/commodity-crops-indigenous-lands/</guid>
   <pubDate>Mon, 10 Jul 2023 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Engolindo Fumaça (Inhaling Smoke)</title>
-  <link>https://hirota.dev/projects/engolindo-fumaca/index.html</link>
+  <link>https://hirota.dev/projects/engolindo-fumaca/</link>
   <description><![CDATA[ 
+
 
 
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://hirota.dev/projects/engolindo-fumaca/engolindo-fumaca.webp" class="preview-image img-fluid figure-img" alt="SMOKE IN THE TAPAJÓS NATIONAL FOREST, AMAZON REGION OF PARÁ STATE, SEPTEMBER 2020"></p>
-<figcaption class="figure-caption">Photo: Marizilda Cruppe / Amazônia Real</figcaption>
+<p><img src="https://hirota.dev/projects/engolindo-fumaca/engolindo-fumaca.webp" class="preview-image img-fluid figure-img"></p>
+<figcaption>Photo: Marizilda Cruppe / Amazônia Real</figcaption>
 </figure>
 </div>
 <p>Inhaling Smoke is a special project that investigates the effects of air pollution caused by wildfires on the health of the Brazilian Amazon population during the pandemic.</p>
@@ -57,7 +59,7 @@
   <category>health</category>
   <category>environmental</category>
   <category>infoamazonia</category>
-  <guid>https://hirota.dev/projects/engolindo-fumaca/index.html</guid>
+  <guid>https://hirota.dev/projects/engolindo-fumaca/</guid>
   <pubDate>Wed, 01 Sep 2021 00:00:00 GMT</pubDate>
 </item>
 </channel>
