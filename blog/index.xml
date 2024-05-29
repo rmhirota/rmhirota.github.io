@@ -9,7 +9,7 @@
 <link>https://hirota.dev/blog/</link>
 <atom:link href="https://hirota.dev/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
-<generator>quarto-1.4.551</generator>
+<generator>quarto-1.4.554</generator>
 <lastBuildDate>Mon, 18 Mar 2024 00:00:00 GMT</lastBuildDate>
 <item>
   <title>D&amp;D and the dice math</title>
@@ -23,7 +23,7 @@
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://hirota.dev/blog/posts/2024-03-18_dice-math/d20.webp" class="preview-image img-fluid figure-img"></p>
+<p><img src="https://hirota.dev/blog/posts/2024-03-18_dice-math/d20.webp" class="preview-image img-fluid figure-img" alt="Twenty sided dice"></p>
 <figcaption>Photo by <a href="https://unsplash.com/@timothycdykes?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Timothy Dykes</a> on <a href="https://unsplash.com/photos/a-group-of-blue-and-brown-dice-sitting-on-top-of-each-other-jfovL-sc0tQ?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Unsplash</a></figcaption>
 </figure>
 </div>
@@ -145,7 +145,7 @@
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://hirota.dev/blog/posts/2023-12-05-aor2/xmas2.webp" class="preview-image img-fluid figure-img"></p>
+<p><img src="https://hirota.dev/blog/posts/2023-12-05-aor2/xmas2.webp" class="preview-image img-fluid figure-img" alt="Red ball ornament"></p>
 <figcaption>Photo by <a href="https://unsplash.com/@melpoole?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Mel Poole</a> on <a href="https://unsplash.com/photos/two-poinsettia-wreathes-izPKjgCxGfM?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Unsplash</a></figcaption>
 </figure>
 </div>
@@ -627,7 +627,7 @@ font-style: inherit;">sum</span>()</span></code></pre></div>
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://hirota.dev/blog/posts/2023-12-03-aor/xmas.webp" class="preview-image img-fluid figure-img"></p>
+<p><img src="https://hirota.dev/blog/posts/2023-12-03-aor/xmas.webp" class="preview-image img-fluid figure-img" alt="Red ball ornament"></p>
 <figcaption>Photo by <a href="https://unsplash.com/@markusspiske?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Markus Spiske</a> on <a href="https://unsplash.com/photos/closeup-photo-of-red-ball-ornament-on-surface-AF_4tBQjdtc?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Unsplash</a></figcaption>
 </figure>
 </div>
@@ -1285,7 +1285,7 @@ font-style: inherit;">sum</span>()</span></code></pre></div>
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://hirota.dev/blog/posts/2023-10-21_posit-conf/trivia.webp" class="preview-image img-fluid figure-img"></p>
+<p><img src="https://hirota.dev/blog/posts/2023-10-21_posit-conf/trivia.webp" class="preview-image img-fluid figure-img" alt="A group of six people smiling with a backdrop illustrated with hex stickers"></p>
 <figcaption>Our team at trivia night</figcaption>
 </figure>
 </div>
@@ -1306,7 +1306,7 @@ font-style: inherit;">sum</span>()</span></code></pre></div>
 <h3 class="anchored" data-anchor-id="r-ladies-are-awesome">3. R-Ladies are awesome</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://hirota.dev/blog/posts/2023-10-21_posit-conf/rladies.webp" class="img-fluid figure-img"></p>
+<p><img src="https://hirota.dev/blog/posts/2023-10-21_posit-conf/rladies.webp" class="img-fluid figure-img" alt="A big group of people sitting and standing after the R-Ladies meetup."></p>
 <figcaption>R-Ladies gathered at the Hyatt for Q&amp;A</figcaption>
 </figure>
 </div>
@@ -1341,7 +1341,7 @@ font-style: inherit;">sum</span>()</span></code></pre></div>
 <p>So I decided to skip some talks (that I knew would be recorded anyway, so I could catch up later) and rested. During one of my breaks, I had a lovely time making friendship bracelets at the arts and crafts table with other people who were recharging their social batteries. I’m also not much of a morning person, so I purposefully missed breakfast on the last day to have tea and some quiet time by myself outside the hotel.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://hirota.dev/blog/posts/2023-10-21_posit-conf/hyatt.webp" class="img-fluid figure-img"></p>
+<p><img src="https://hirota.dev/blog/posts/2023-10-21_posit-conf/hyatt.webp" class="img-fluid figure-img" alt="posit conf logo at the entrance of the hyatt hotel."></p>
 <figcaption>Saying farewell to posit::conf(2023)</figcaption>
 </figure>
 </div>
