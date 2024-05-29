@@ -2,6 +2,12 @@
 title: "Talks"
 ---
 
+### 2024
+
+#### [Incendios en la Amazonia: Investigando los efectos de la contaminaciõn en la salud](https://hirota.dev/csvconf2024)
+
+CSV,conf,v8 - Puebla, MX
+
 ### 2023
 
 #### [Como usamos estatística para ajudar no processo de adoção de crianças](https://hirota.dev/sest2023/#/title-slide)
