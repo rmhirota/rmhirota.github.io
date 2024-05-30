@@ -4,7 +4,7 @@ title: "Talks"
 
 ### 2024
 
-#### [Incendios en la Amazonia: Investigando los efectos de la contaminaciõn en la salud](https://hirota.dev/csvconf2024)
+#### [Incendios en la Amazonia: Investigando los efectos de la contaminación en la salud](https://hirota.dev/csvconf2024)
 
 CSV,conf,v8 - Puebla, MX
 
