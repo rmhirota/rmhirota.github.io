@@ -9,7 +9,7 @@
 <link>https://hirota.dev/blog/</link>
 <atom:link href="https://hirota.dev/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
-<generator>quarto-1.4.554</generator>
+<generator>quarto-1.7.33</generator>
 <lastBuildDate>Mon, 18 Mar 2024 00:00:00 GMT</lastBuildDate>
 <item>
   <title>D&amp;D and the dice math</title>
@@ -838,9 +838,11 @@ font-style: inherit;">"[0-9]|one|two|three|four|five|six|seven|eight|nine"</span
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(num) {</span>
 <span id="cb5-2">  <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">if</span> (stringr<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
@@ -852,6 +854,7 @@ font-style: inherit;">"[a-z]"</span>)) {</span>
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">switch</span>(</span>
 <span id="cb5-4">      num, <span class="at" style="color: #657422;
 background-color: null;
@@ -894,6 +897,7 @@ font-style: inherit;">9</span></span>
 <span id="cb5-6">    )</span>
 <span id="cb5-7">  } <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">else</span> {</span>
 <span id="cb5-8">    result <span class="ot" style="color: #003B4F;
 background-color: null;
@@ -1053,9 +1057,11 @@ Second try for part 2, Day 1 – click to see my solution
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(num) {</span>
 <span id="cb8-2">  <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">if</span> (stringr<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
@@ -1067,6 +1073,7 @@ font-style: inherit;">"[a-z]"</span>)) {</span>
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">switch</span>(</span>
 <span id="cb8-4">      num, <span class="at" style="color: #657422;
 background-color: null;
@@ -1109,6 +1116,7 @@ font-style: inherit;">9</span></span>
 <span id="cb8-6">    )</span>
 <span id="cb8-7">  } <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">else</span> {</span>
 <span id="cb8-8">    result <span class="ot" style="color: #003B4F;
 background-color: null;
