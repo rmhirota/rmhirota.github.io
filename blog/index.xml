@@ -9,7 +9,7 @@
 <link>https://hirota.dev/blog/</link>
 <atom:link href="https://hirota.dev/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
-<generator>quarto-1.7.33</generator>
+<generator>quarto-1.8.27</generator>
 <lastBuildDate>Mon, 18 Mar 2024 00:00:00 GMT</lastBuildDate>
 <item>
   <title>D&amp;D and the dice math</title>
@@ -154,7 +154,7 @@
 <section id="day-2-cube-conundrum" class="level2">
 <h2 class="anchored" data-anchor-id="day-2-cube-conundrum">Day 2: Cube Conundrum</h2>
 <p>Let’s start by fetching the puzzle and input for Day 2:</p>
-<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="sc" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&gt;</span> aor<span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -196,7 +196,7 @@ font-style: inherit;">`</span><span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">aor::day_continue("2023-12-02", "aoc2023/02_cube_conundrum/puzzle.R")</span><span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">`</span></span></code></pre></div>
+font-style: inherit;">`</span></span></code></pre></div></div>
 <p>Again, there are many ways to solve the puzzle, but I ended up using <code>dplyr</code> and <code>tidyr</code>. Thankfully Day 2 was easier than Day 1; all you had to do was count red, green and blue balls and check some given conditions.</p>
 <p>For the first part of the puzzle, you had to find all posible games given a number of balls (so you had to filter out games that exceeded that).</p>
 <blockquote class="blockquote">
@@ -209,18 +209,18 @@ Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green<br>
 In game 1, three sets of cubes are revealed from the bag (and then put back again). The first set is 3 blue cubes and 4 red cubes; the second set is 1 red cube, 2 green cubes, and 6 blue cubes; the third set is only 2 green cubes. The Elf would first like to know which games would have been possible if the bag contained <em>only 12 red cubes, 13 green cubes, and 14 blue cubes</em>?</p>
 </blockquote>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Answer for part 1, Day 2 – click to see my solution
+<span class="screen-reader-only">Tip</span>Answer for part 1, Day 2 – click to see my solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">input <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">input <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="st" style="color: #20794D;
 background-color: null;
@@ -408,7 +408,7 @@ background-color: null;
 font-style: inherit;">|&gt;</span></span>
 <span id="cb2-21">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">sum</span>()</span></code></pre></div>
+font-style: inherit;">sum</span>()</span></code></pre></div></div>
 </div>
 </div>
 </div>
@@ -421,18 +421,18 @@ In game 1, the game could have been played with as few as 4 red, 2 green, and 6 
 Game 2 could have been played with a minimum of 1 red, 3 green, and 4 blue cubes.</p>
 </blockquote>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Answer for part 2, Day 2 – click to see my solution
+<span class="screen-reader-only">Tip</span>Answer for part 2, Day 2 – click to see my solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">input <span class="sc" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">input <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
 <span id="cb3-2">  readr<span class="sc" style="color: #5E5E5E;
@@ -599,7 +599,7 @@ background-color: null;
 font-style: inherit;">|&gt;</span></span>
 <span id="cb3-18">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">sum</span>()</span></code></pre></div>
+font-style: inherit;">sum</span>()</span></code></pre></div></div>
 </div>
 </div>
 </div>
@@ -638,7 +638,7 @@ font-style: inherit;">sum</span>()</span></code></pre></div>
 </blockquote>
 <p>I’ve tried to solve some of them, but this time of the year is usually so hectic that I don’t think I ever got past day 6. Maybe this is the year I get to the second week? (Nevermind that I’m already late.)</p>
 <p>I still have a full week ahead of exams and papers, so I’ll probably take it slow, but I wanted to lay the groundwork. I’m starting by installing <a href="https://github.com/clente/aor">{aor}</a>, which is a neat R package with some useful functions to help you with Advent of Code, so you can focus on actually solving the puzzles.</p>
-<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># install.packages("devtools")</span></span>
 <span id="cb1-2">devtools<span class="sc" style="color: #5E5E5E;
@@ -647,9 +647,9 @@ font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">install_github</span>(<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"clente/aor"</span>)</span></code></pre></div>
+font-style: inherit;">"clente/aor"</span>)</span></code></pre></div></div>
 <p>Once installed and with the right cookie configurations (all explained in <code>aor</code>’s readme), I can simply run</p>
-<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="sc" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&gt;</span> aor<span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -691,7 +691,7 @@ font-style: inherit;">`</span><span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">aor::day_continue("2023-12-01", "aoc2023/01_trebuchet/puzzle.R")</span><span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">`</span></span></code></pre></div>
+font-style: inherit;">`</span></span></code></pre></div></div>
 <p>…and I’ll have a directory for that day’s puzzle, with a template for the code and the input text! It’s important to note that you must be logged in to get the puzzle input, as they are different across users.</p>
 <p>Next step is solving the puzzles. I’m starting with day one.</p>
 <section id="day-1-trebuchet" class="level2">
@@ -712,18 +712,18 @@ In this example, the calibration values of these four lines are <code>12</code>,
 </blockquote>
 <p>There are many ways this can be done, but I ended up using <code>dplyr</code> because I’m more used to it. With a little bit of regex, it was easy enough to extract the numbers that I needed to clear part 1.</p>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Answer for part 1, Day 1 – click to see my solution
+<span class="screen-reader-only">Tip</span>Answer for part 1, Day 1 – click to see my solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">input <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">input <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="st" style="color: #20794D;
 background-color: null;
@@ -799,7 +799,7 @@ background-color: null;
 font-style: inherit;">|&gt;</span></span>
 <span id="cb3-11">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">sum</span>()</span></code></pre></div>
+font-style: inherit;">sum</span>()</span></code></pre></div></div>
 </div>
 </div>
 </div>
@@ -816,25 +816,25 @@ zoneight234<br>
 In this example, the calibration values are <code>29</code>, <code>83</code>, <code>13</code>, <code>24</code>, <code>42</code>, <code>14</code>, and <code>76</code>. Adding these together produces <em><code>281</code></em>.</p>
 </blockquote>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-First try for part 2, Day 1 – click to see my failed attempt
+<span class="screen-reader-only">Tip</span>First try for part 2, Day 1 – click to see my failed attempt
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>My first idea was using regex to get all ocurrences of numbers <em>and</em> spelled out numbers. So my regex would look something like</p>
-<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">rx <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">rx <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> (<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"[0-9]|one|two|three|four|five|six|seven|eight|nine"</span>)</span></code></pre></div>
+font-style: inherit;">"[0-9]|one|two|three|four|five|six|seven|eight|nine"</span>)</span></code></pre></div></div>
 <p>Then, I could switch the spelled out numbers, paste the first and last ones and sum them up.</p>
-<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">switch_numbers <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">switch_numbers <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
@@ -1004,9 +1004,9 @@ background-color: null;
 font-style: inherit;">|&gt;</span></span>
 <span id="cb5-25">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">sum</span>()</span></code></pre></div>
+font-style: inherit;">sum</span>()</span></code></pre></div></div>
 <p><em>But</em>, turns out I was wrong. You can see the problem with <code>str_extract_all</code> in this case:</p>
-<div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><span class="sc" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&gt;</span> stringr<span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -1022,9 +1022,9 @@ font-style: inherit;">1</span>]]</span>
 background-color: null;
 font-style: inherit;">1</span>] <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"three"</span></span></code></pre></div>
+font-style: inherit;">"three"</span></span></code></pre></div></div>
 <p>What I actually wanted:</p>
-<div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">[[<span class="dv" style="color: #AD0000;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">[[<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>]]</span>
 <span id="cb7-2">[<span class="dv" style="color: #AD0000;
@@ -1035,25 +1035,25 @@ font-style: inherit;">"three"</span>  [<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span>] <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"eight"</span></span></code></pre></div>
+font-style: inherit;">"eight"</span></span></code></pre></div></div>
 <p>The regex I was using does not take into account overlapping!</p>
 </div>
 </div>
 </div>
 <p>This takes us to attempt #2, where I try to take this problem into account with <code>stringi</code>.</p>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Second try for part 2, Day 1 – click to see my solution
+<span class="screen-reader-only">Tip</span>Second try for part 2, Day 1 – click to see my solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1">switch_numbers <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1">switch_numbers <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
@@ -1264,7 +1264,7 @@ background-color: null;
 font-style: inherit;">|&gt;</span></span>
 <span id="cb8-28">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">sum</span>()</span></code></pre></div>
+font-style: inherit;">sum</span>()</span></code></pre></div></div>
 <p>Using a lookahead in the regex (?=) and <code>stringi::stri_match_all_regex</code> did the trick and got me to the right answer! 🥳</p>
 </div>
 </div>
