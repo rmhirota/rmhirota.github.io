@@ -14,7 +14,7 @@ execute:
 ![Photo by <a
 href="https://unsplash.com/pt-br/@iml">Ilse</a> on <a
 href="https://unsplash.com/pt-br/fotografias/banco-de-madeira-marrom-no-campo-de-grama-verde-perto-de-arvores-verdes-durante-o-dia-N-JZjC5UR9U?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink
-">Unsplash</a>](d20.webp){fig-alt="Wooden bench on a field in daytime" .preview-image}
+">Unsplash</a>](bench.webp){fig-alt="Wooden bench on a field in daytime" .preview-image}
 
 Almost every year, I go through the same ritual of reflecting on what the past
 year meant to me, both on a professional and personal level. Accomplishments, 
