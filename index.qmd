@@ -12,9 +12,6 @@ about:
     - icon: cloud
       text: Bluesky
       href: https://bsky.app/profile/hirota.dev
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/renata_mh
     - icon: github
       text: Github
       href: https://github.com/rmhirota
@@ -30,9 +27,8 @@ My name is Renata Hirota and I'm a statistician and data journalist based in Sao
 🔭 I’m currently a data analyst at [Jusbrasil](https://www.jusbrasil.com.br), where I work with the application of quantitative and statistical methods to law.
 I'm also an MSc student in statistics at the University of Sao Paulo.
 
-🌱 I work with data journalism, analysing data for stories or developing applications for journalistic purposes.
+🌱 I also work with data journalism occasionally, analysing data for stories or developing applications for journalistic purposes.
 
 👩🏻‍💻 I love everything R and I'm part of R-Ladies.
 
-⚾️ My hobbies include playing baseball and D&D.
-
+⚾️ My hobbies include playing baseball and TTRPG.

@@ -6,7 +6,7 @@ date: "2026-02-04"
 categories: 
   - Personal
   - Review
-draft: true
+draft: false
 execute:
   echo: false
 ---

@@ -2,6 +2,12 @@
 title: "Talks"
 ---
 
+### 2025
+
+#### [Meu primeiro pacote R: facilitando a rotina de análises](https://hirota.dev/coda2025/)
+
+Coda 2025
+
 ### 2024
 
 #### [Incendios en la Amazonia: Investigando los efectos de la contaminación en la salud](https://hirota.dev/csvconf2024)
@@ -10,7 +16,7 @@ CSV,conf,v8 - Puebla, MX
 
 ### 2023
 
-#### [Como usamos estatística para ajudar no processo de adoção de crianças](https://hirota.dev/sest2023/#/title-slide)
+#### [Como usamos estatística para ajudar no processo de adoção de crianças](https://hirota.dev/sest2023/)
 
 XI Semana da Estatística - São Carlos
 
