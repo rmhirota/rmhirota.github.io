@@ -4,7 +4,7 @@
     "href": "talks/index.html",
     "title": "Talks",
     "section": "",
-    "text": "2024\n\nIncendios en la Amazonia: Investigando los efectos de la contaminación en la salud\nCSV,conf,v8 - Puebla, MX\n\n\n\n2023\n\nComo usamos estatística para ajudar no processo de adoção de crianças\nXI Semana da Estatística - São Carlos\n\n\n\n2022\n\nEstatística para jornalistas\nCongresso Abraji 2022\n\n\nAutomatização de emails usando R\nCoda 2022"
+    "text": "2025\n\nMeu primeiro pacote R: facilitando a rotina de análises\nCoda 2025\n\n\n\n2024\n\nIncendios en la Amazonia: Investigando los efectos de la contaminación en la salud\nCSV,conf,v8 - Puebla, MX\n\n\n\n2023\n\nComo usamos estatística para ajudar no processo de adoção de crianças\nXI Semana da Estatística - São Carlos\n\n\n\n2022\n\nEstatística para jornalistas\nCongresso Abraji 2022\n\n\nAutomatização de emails usando R\nCoda 2022"
   },
   {
     "objectID": "about/index.html",
@@ -74,7 +74,7 @@
     "href": "blog/index.html",
     "title": "Blog",
     "section": "",
-    "text": "D&D and the dice math\n\n\n\nstats\n\nRPG\n\n\n\nHow the roll of a die can change outcomes in games\n\n\n\n\n\nMar 18, 2024\n\n\nRenata Hirota\n\n\n\n\n\n\n\n\n\n\n\n\nAdvent of Code: Day 2\n\n\n\nadvent of code\n\nR\n\n\n\nCounting red, blue and green balls with elves\n\n\n\n\n\nDec 5, 2023\n\n\nRenata Hirota\n\n\n\n\n\n\n\n\n\n\n\n\nAdvent of Code in R\n\n\n\nadvent of code\n\nR\n\n\n\nLet’s see how far I can take this\n\n\n\n\n\nDec 3, 2023\n\n\nRenata Hirota\n\n\n\n\n\n\n\n\n\n\n\n\nWhat I learned at posit::conf(2023)\n\n\n\nevents\n\nR\n\n\n\nAnd everything I wish people had told me beforehand\n\n\n\n\n\nOct 21, 2023\n\n\nRenata Hirota\n\n\n\n\n\nNo matching items"
+    "text": "Things I let go in 2025\n\n\n\nPersonal\n\nReview\n\n\n\nTurns out I’m getting too old to be constantly tired\n\n\n\n\n\nFeb 4, 2026\n\n\nRenata Hirota\n\n\n\n\n\n\n\n\n\n\n\n\nD&D and the dice math\n\n\n\nstats\n\nRPG\n\n\n\nHow the roll of a die can change outcomes in games\n\n\n\n\n\nMar 18, 2024\n\n\nRenata Hirota\n\n\n\n\n\n\n\n\n\n\n\n\nAdvent of Code: Day 2\n\n\n\nadvent of code\n\nR\n\n\n\nCounting red, blue and green balls with elves\n\n\n\n\n\nDec 5, 2023\n\n\nRenata Hirota\n\n\n\n\n\n\n\n\n\n\n\n\nAdvent of Code in R\n\n\n\nadvent of code\n\nR\n\n\n\nLet’s see how far I can take this\n\n\n\n\n\nDec 3, 2023\n\n\nRenata Hirota\n\n\n\n\n\n\n\n\n\n\n\n\nWhat I learned at posit::conf(2023)\n\n\n\nevents\n\nR\n\n\n\nAnd everything I wish people had told me beforehand\n\n\n\n\n\nOct 21, 2023\n\n\nRenata Hirota\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/engolindo-fumaca/index.html",
@@ -102,14 +102,14 @@
     "href": "index.html",
     "title": "Renata Hirota",
     "section": "",
-    "text": "My name is Renata Hirota and I’m a statistician and data journalist based in Sao Paulo, Brazil.\n🔭 I’m currently a data analyst at Jusbrasil, where I work with the application of quantitative and statistical methods to law. I’m also an MSc student in statistics at the University of Sao Paulo.\n🌱 I work with data journalism, analysing data for stories or developing applications for journalistic purposes.\n👩🏻‍💻 I love everything R and I’m part of R-Ladies.\n⚾️ My hobbies include playing baseball and D&D."
+    "text": "My name is Renata Hirota and I’m a statistician and data journalist based in Sao Paulo, Brazil.\n🔭 I’m currently a data analyst at Jusbrasil, where I work with the application of quantitative and statistical methods to law. I’m also an MSc student in statistics at the University of Sao Paulo.\n🌱 I also work with data journalism occasionally, analysing data for stories or developing applications for journalistic purposes.\n👩🏻‍💻 I love everything R and I’m part of R-Ladies.\n⚾️ My hobbies include playing baseball and TTRPG."
   },
   {
     "objectID": "index.html#hi-there",
     "href": "index.html#hi-there",
     "title": "Renata Hirota",
     "section": "",
-    "text": "My name is Renata Hirota and I’m a statistician and data journalist based in Sao Paulo, Brazil.\n🔭 I’m currently a data analyst at Jusbrasil, where I work with the application of quantitative and statistical methods to law. I’m also an MSc student in statistics at the University of Sao Paulo.\n🌱 I work with data journalism, analysing data for stories or developing applications for journalistic purposes.\n👩🏻‍💻 I love everything R and I’m part of R-Ladies.\n⚾️ My hobbies include playing baseball and D&D."
+    "text": "My name is Renata Hirota and I’m a statistician and data journalist based in Sao Paulo, Brazil.\n🔭 I’m currently a data analyst at Jusbrasil, where I work with the application of quantitative and statistical methods to law. I’m also an MSc student in statistics at the University of Sao Paulo.\n🌱 I also work with data journalism occasionally, analysing data for stories or developing applications for journalistic purposes.\n👩🏻‍💻 I love everything R and I’m part of R-Ladies.\n⚾️ My hobbies include playing baseball and TTRPG."
   },
   {
     "objectID": "blog/posts/2023-12-03-aor/index.html",
@@ -147,10 +147,52 @@
     "text": "Tips and hot takes\nThere are also a few things that I wanted to share with other people planning to attend next year.\n\n1. If you’re an introvert, know that there are others like you\nYes, you, the person standing awkwardly in a corner while everyone else is mingling and seems to be having a great time. There are other people doing exactly the same. Try to approach them with some questions, maybe? Here are some basic conversation starters once you’re past the “what do you do for work” stage that are not too boring but also not too unrealistic:\n\nWhat talks did you like the most so far?\nWhat did you learn that you are excited to try?\nWhat’s your favorite R package?\nWhat is the R community like where you’re based?\nIs it your first time in {city}? Do you have any plans apart from the conf?\n\n\n\n2. Don’t assume people know the same things you do\nTalking to people who are very knowledgeable can be either intimidating or mind-opening. I had a great time talking to a much more experienced developer who explained so much about their project in a friendly way that I felt welcomed to share my thoughts and ask questions. Be mindful not to be the arrogant person (even if unconsciously) who assumes people know what you’re talking about.\n\n\n3. It’s OK to take a break\nBy the end of the second day, I was physically and mentally exhausted. To be honest, I was recovering from a cold a few days before my flight, and was feeling great, but two days of talking non-stop, some alcohol and early mornings made me so hoarse I could barely hear myself speak.\nSo I decided to skip some talks (that I knew would be recorded anyway, so I could catch up later) and rested. During one of my breaks, I had a lovely time making friendship bracelets at the arts and crafts table with other people who were recharging their social batteries. I’m also not much of a morning person, so I purposefully missed breakfast on the last day to have tea and some quiet time by myself outside the hotel.\n\n\n\nSaying farewell to posit::conf(2023)\n\n\nIt was absolutely amazing to attend posit::conf(2023). Next year it’s going to be in Seattle and I’m already thinking about how I’m going to be there. Fingers crossed for getting a talk acceppted! 🤞"
   },
   {
+    "objectID": "blog/posts/2026-02-04_things-i-let-go-2025/index.html",
+    "href": "blog/posts/2026-02-04_things-i-let-go-2025/index.html",
+    "title": "Things I let go in 2025",
+    "section": "",
+    "text": "Photo by Ilse on Unsplash\nAlmost every year, I go through the same ritual of reflecting on what the past year meant to me, both on a professional and personal level. Accomplishments, work related projects and awards, things I learned, meaningful experiences, and so on.\nI don’t usually share those reflections, limiting myself to Spotify Wrapped and other silly year-end summaries. However, I thought it would be nice to share something more personal this time around.\n2025 was a very busy year. I’ve noticed that every year seems to get busier, but oh boy, I really felt it with my whole body this year. In January, I was three months into a new job, and I was still trying to get the hang of things, getting used to new processes (or lack thereof), and learning the ropes of a new team. Mind you, this was in addition to a part-time job I had been doing for almost a year already, and a master’s degree that I was still trying to finish.\nMy niece was born in December 2024, and all I wanted was to visit every week. I moved to a new apartment in March 2025. I had three international trips, attended three or four weddings, spoke at two major conferences, won a journalism award, got engaged, started (a few) new hobbies, started planning for a wedding, planning for a surprise birthday party for my sister, planning for I don’t know how many other things… It was a LOT.\nSo this year, I wanted to share some of the things I decided to let go in 2025, things that no longer fit in my life, not because I don’t like them anymore, but because I simply don’t have the time or energy to dedicate to them. It took me a while to finally accept that not only my time but also my energy is finite (shocking) and I really need to protect them both."
+  },
+  {
+    "objectID": "blog/posts/2026-02-04_things-i-let-go-2025/index.html#working-two-jobs",
+    "href": "blog/posts/2026-02-04_things-i-let-go-2025/index.html#working-two-jobs",
+    "title": "Things I let go in 2025",
+    "section": "1. Working two jobs",
+    "text": "1. Working two jobs\nThis was one of the hardest decision I had to make last year. I studied journalism and fresh out of college I shared the frustration of many of my peers about the lack of good paying jobs in the field. I ended up starting over and going back to college to study statistics, which ironically opened many doors for me in the tech industry – but also in data journalism, I field I didn’t even know existed.\nI used to juggle classes, an internship, data journalism projects as a freelancer, and baseball practice, and although I wasn’t failing anything, I felt I wasn’t giving my all to none of them. Then the covid pandemic struck, time warped and nothing made sense anymore. I somehow graduated (thanks to friends who studied with me and explained me SO many things), and I thought things would be quieter, but I just filled whatever time I had gotten back from classes with… more work.\nI couldn’t say no to data journalism projects that were so interesting, but I didn’t want to forgo a formal job. So I kept stacking things up for years, having anxiety crises every other week – did I mention I started a master’s in statistics because I missed studying? – until last year I started having constant heartburn. I had gained 10 kg, I had stopped exercising (I still miss baseball on Saturdays), and was constantly frustrated about “not having time” and doing everything half-assedly.\nMy therapist was suspicious of an undiagnosed ADHD, so on top of that I started seeing a psychiatrist, and after a few months I made a deal with myself, my partner, my therapist and my psychiatrist: I had to let go of something.\nSo that’s how I ended up having only one job for the first time in a decade! It was weird at first, but it unlocked a new joy: having time for weekly family dinner with my niece. It’s so simple but it makes me so happy that I wouldn’t give it up for anything, and I see that now."
+  },
+  {
+    "objectID": "blog/posts/2026-02-04_things-i-let-go-2025/index.html#finishing-my-thesis-in-2025",
+    "href": "blog/posts/2026-02-04_things-i-let-go-2025/index.html#finishing-my-thesis-in-2025",
+    "title": "Things I let go in 2025",
+    "section": "2. Finishing my thesis in 2025",
+    "text": "2. Finishing my thesis in 2025\nIt’s ridiculous that I’ve done all the credits for my MsC (I even took summer classes so I wouldn’t be too swamped during the semester), but can’t sit down to write my thesis. It took me months to decide on a theme, then I changed it 2 or 3 times just for good measure, and once I settled… Nothing. I kept postponing and cancelling meetings with my advisor and now with the deadline looming, I decided to take a leave for a year.\nI’m lucky my advisor is so kind and understanding, and even suggested we keep working on it during this time if I wanted to, without the pressure of the deadline. I’m planning the next few months and we’ll see how it goes."
+  },
+  {
+    "objectID": "blog/posts/2026-02-04_things-i-let-go-2025/index.html#home-cooked-meals-every-single-day",
+    "href": "blog/posts/2026-02-04_things-i-let-go-2025/index.html#home-cooked-meals-every-single-day",
+    "title": "Things I let go in 2025",
+    "section": "3. Home-cooked meals every single day",
+    "text": "3. Home-cooked meals every single day\nSome people don’t care about food, as long as it’s nourishing and/or tasty. I’m not one of those people. I care deeply – cooking and eating give me joy, whether it is with people or by myself.\nWhen I first moved out of my parent’s house, I struggled to establish a routine that would allow for all the hassle that is cooking at home. Grocery shopping, managing expiry dates, planning for the week, balancing nutrients – it might be simple, but it’s a lot. But I eventually managed to find my rhythm.\nThen my partner moved in with me and… well, let’s just say that those 10 kg I gained were not only due to stress and anxiety. My eating habits changed, my metabolism changed with age, and in my mind I kept stressing that home-cooked meal = good, everything else = bad.\nI still like cooking, don’t get me wrong. And I still think nothing beats a healthy homemade meal. But I admit now that, as much as I want to, I don’t have the time or energy to cook every meal, everyday. We do what we can, and when we can’t, we use plans B or C (which is having a freezer stocked with packed lunch and ordering healthy-ish takeout). I also simplified groceries: I have a subscription that deliveries organic fruit, vegetables and eggs every two weeks, so we have less things to worry about when making a grocery list."
+  },
+  {
+    "objectID": "blog/posts/2026-02-04_things-i-let-go-2025/index.html#being-online-all-the-time",
+    "href": "blog/posts/2026-02-04_things-i-let-go-2025/index.html#being-online-all-the-time",
+    "title": "Things I let go in 2025",
+    "section": "4. Being online all the time",
+    "text": "4. Being online all the time\nI used to be a lot on Twitter (when it was still called that), Whatsapp groups, discord channels, Instagram. Nowadays, I can take from 2 hours to a whole day to answer a text, to the frustration of my friends and family at first. Now they know that if something is important and can’t wait for a few hours, they should call me, like in the 1900s.\nI keep forgetting my phone at home, the battery is out at least once a week because I forgot to check – but I love it! I feel I talk more with my family, instead of just texting, and meet friends more regularly. I don’t miss it, and I think I would give up having a smartphone at all if I weren’t so lost without Waze/Maps."
+  },
+  {
+    "objectID": "blog/posts/2026-02-04_things-i-let-go-2025/index.html#heres-for-a-more-intentional-and-less-tiring-year",
+    "href": "blog/posts/2026-02-04_things-i-let-go-2025/index.html#heres-for-a-more-intentional-and-less-tiring-year",
+    "title": "Things I let go in 2025",
+    "section": "Here’s for a more intentional and less tiring year",
+    "text": "Here’s for a more intentional and less tiring year\nSo that’s it. I still have some work to, but I feel proud that I took some steps towards a calmer and more focused year. Letting go used to feel like giving up, but I (finally!) learned that it doesn’t have to be. I’m just making space for other great things, I’ll mourn them but will not regret them."
+  },
+  {
     "objectID": "awards/index.html",
     "href": "awards/index.html",
     "title": "Awards",
     "section": "",
-    "text": "2022\n\nIV Cláudio Weber Abramo Award for Data Journalism\nWinning project: BotPonto (Núcleo Jornalismo)\n\n\n\n2021\n\nIII Cláudio Weber Abramo Award for Data Journalism\nWinning projects:\n\nEngolindo Fumaça (InfoAmazonia)\nMonitorA (Revista AzMina, InternetLab)\n\nCommendation: Monitor Nuclear (Núcleo Jornalismo)\n\n\nKing of Spain International Journalism Award\nWinning project for Environmental Journalism: Engolindo Fumaça (InfoAmazonia)"
+    "text": "Eleições Municipais 2024 (InfoAmazonia)\nQual é o posicionamento dos eleitos na Amazônia em relação ao meio ambiente?\n\nCláudio Weber Abramo Award for Data Journalism - Data visualization (2025)\n\n\n\nEngolindo Fumaça (InfoAmazonia)\n\nRoche Award for Health Journalism finalist (2022)\nKing of Spain International Journalism Award - Environmental Journalism (2021)\nCláudio Weber Abramo Award for Data Journalism (2021)\n\n\n\nBotPonto (Núcleo Jornalismo)\n\nCláudio Weber Abramo Award for Data Journalism - Innovation (2022)\n\n\n\nMonitor Nuclear (Núcleo Jornalismo)\n\nCommendation: Cláudio Weber Abramo Award for Data Journalism (2021)\n\n\n\nMonitorA (Revista AzMina, InternetLab)\n\nCláudio Weber Abramo Award for Data Journalism (2021)"
   }
 ]
