@@ -2,6 +2,20 @@
 title: "Talks"
 ---
 
+### 2026
+
+#### [Mapping Climate Stories with {sf}](https://user2026.r-project.org/)
+
+useR! Conference 2026 - Warsaw, PL
+
+#### [Tudo o que você precisa saber de estatística](https://docs.google.com/presentation/d/1m7vWLnpxVxlV5KD3cbtDresfAwOCiXW-v-j4k8rtP_M/edit?slide=id.g3f3cd582ff3_2_75#slide=id.g3f3cd582ff3_2_75)
+
+Congresso Abraji 2026
+
+#### [Bootcamp R](https://hirota.dev/abraji2026/abraji_2026)
+
+Congresso Abraji 2026
+
 ### 2025
 
 #### [Meu primeiro pacote R: facilitando a rotina de análises](https://hirota.dev/coda2025/)
