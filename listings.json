@@ -1,5 +1,12 @@
 [
   {
+    "listing": "/projects/index.html",
+    "items": [
+      "/projects/commodity-crops-indigenous-lands/index.html",
+      "/projects/engolindo-fumaca/index.html"
+    ]
+  },
+  {
     "listing": "/blog/index.html",
     "items": [
       "/blog/posts/2026-02-04_things-i-let-go-2025/index.html",
@@ -7,13 +14,6 @@
       "/blog/posts/2023-12-05-aor2/index.html",
       "/blog/posts/2023-12-03-aor/index.html",
       "/blog/posts/2023-10-21_posit-conf/index.html"
-    ]
-  },
-  {
-    "listing": "/projects/index.html",
-    "items": [
-      "/projects/commodity-crops-indigenous-lands/index.html",
-      "/projects/engolindo-fumaca/index.html"
     ]
   }
 ]
